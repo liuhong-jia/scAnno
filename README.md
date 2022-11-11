@@ -21,6 +21,15 @@ You can install the package using devtools::install_github:
 In this tutorial we will use GSE136103 (Liver) as an example.
 
     library(scAnno)
+    library(Seurat)
+    library(patchwork)
+    library(dplyr)
+    library(MASS)
+    library(irlba)
+    library(future)
+    library(glmnet)
+    library(reticulate)
+    library(parallel)
     
     data(Human_cell_landscape)
     
