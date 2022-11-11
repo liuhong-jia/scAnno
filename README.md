@@ -52,7 +52,7 @@ In this tutorial we will use GSE136103 (Liver) as an example.
     
     [INFO] 35 single-cell clusters that need to be annotated.
     
-    ref.obj <-Human_cell_landscape
+    ref.obj <- Human_cell_landscape
     
     [INFO] Reference spectrum of human cell landscape, including 63 cell types across more than 50 tissue types.
     
