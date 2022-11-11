@@ -33,6 +33,8 @@ In this tutorial we will use GSE136103 (Liver) as an example.
     
     data(Human_cell_landscape)
     
+    data(gene.anno)
+    [INFO] Protein-coding genes.
     data(GSE136103)
     
     obj.seu <- GSE136103
