@@ -51,7 +51,7 @@ In this tutorial we will use GSE136103 (Liver) as an example.
 
 ***
 
-    scAnno <- scAnno (query = obj.seu , ref.expr = ref.expr , ref.anno = ref.anno)
+    scAnno <- scAnno (query = obj.seu , ref.expr = ref.expr , ref.anno = ref.anno , gene.anno = gene.anno)
     
     scAnno
     $query
