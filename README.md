@@ -88,5 +88,4 @@ In this tutorial we will use GSE136103 (Liver) as an example.
 
 
     [INFO] Show annotation results...
-
-![image-20221103155434294](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20221103155434294.png)
+![2e84df1c21a02be5a72e2768c5580ae](https://user-images.githubusercontent.com/115637576/201280348-864beccb-3797-46b4-aa20-4305ec1a9416.png)
