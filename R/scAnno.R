@@ -19,8 +19,6 @@ scAnno <- function(query = obj.seu, ref.expr = ref.expr, ref.anno = ref.anno, sh
 	if (is.null(ref.expr) && is.null(ref.anno)) stop('Cell type and reference expression profile must be provided, exiting...')
 	if (!is.null(ref.expr) && is.null(ref.anno)) stop('Cell type must be assigned for refernce profile, exiting...') 
 	if (is.null(ref.expr) && !is.null(ref.anno)) stop('Refernce profile must be provided when annotations assigned, exiting...')
-	#gene.anno <- data(gene.anno)
-	#readRDS(system.file('external', 'gene.anno.rds', package = 'scAnno'))
 	if (!is.null(ref.expr) && !is.null(ref.anno)) {	
 	if (!inherits(ref.expr, 'matrix') && !inherits(ref.expr, 'data.frame')) stop(sprintf('%s must be gene expression matrix or data.frame, exiting...', deparse(substitute(ref.expr))))
 	if (!inherits(ref.anno, 'character')) stop(sprintf('%s must be a vector of characters, exiting...', deparse(substitute(ref.anno))))
