@@ -72,42 +72,38 @@ In this tutorial we will use GSE136103 (Liver) as an example.
     21898 features across 16036 samples within 1 assay
     Active assay: RNA (21898 features, 2830 variable features)
     2 dimensional reductions calculated: pca, umap
-    
+
     $reference
     An object of class Seurat
-    17020 features across 11981 samples within 1 assay
+    17020 features across 5561 samples within 1 assay
     Active assay: RNA (17020 features, 0 variable features)
-    
+
     $predict_lable
-    [1] "T cell"                              "T cell"
-    [3] "T cell"                              "T cell"
-    [5] "T cell"                              "M2 Macrophage"
-    [7] "T cell"                              "Mast cell"
-    [9] "Erythroid progenitor cell (RP high)" "Neutrophil"
-    [11] "Enterocyte"                          "Macrophage"
-    [13] "T cell"                              "Endothelial cell (APC)"
-    [15] "Antigen presenting cell (RPS high)"  "Sinusoidal endothelial cell"
-    [17] "Endothelial cell"                    "T cell"
-    [19] "Macrophage"                          "Smooth muscle cell"
-    [21] "T cell"                              "Smooth muscle cell"
-    [23] "B cell"                              "Monocyte"
-    [25] "T cell"                              "Mast cell"
-    [27] "B cell (Plasmocyte)"                 "Dendritic cell"
-    [29] "Endothelial cell (APC)"              "Sinusoidal endothelial cell"
-    [31] "B cell"                              "Mesothelial cell"
-    [33] "Endothelial cell"                    "Dendritic cell"
-    [35] "Sinusoidal endothelial cell"
-    
+    [1] "T cell"              "T cell"              "T cell"
+    [4] "T cell"              "T cell"              "M2 Macrophage"
+    [7] "T cell"              "Mast cell"           "CB CD34+"
+    [10] "Neutrophil"          "Basal cell"          "Macrophage"
+    [13] "T cell"              "Endothelial cell"    "Monocyte"
+    [16] "Endothelial cell"    "Endothelial cell"    "T cell"
+    [19] "Macrophage"          "Smooth muscle cell"  "T cell"
+    [22] "Smooth muscle cell"  "B cell"              "Monocyte"
+    [25] "T cell"              "T cell"              "B cell (Plasmocyte)"
+    [28] "Dendritic cell"      "Endothelial cell"    "Endothelial cell"
+    [31] "B cell"              "Fibroblast"          "Endothelial cell"
+    [34] "Dendritic cell"      "Enterocyte"
+
     $predict_score
-    [1] 0.07787374 0.07216236 0.04723584 0.08651074 0.09659525 0.70952887
-    [7] 0.08282688 0.86187648 1.00015873 1.00004725 1.00128895 0.45628805
-    [13] 0.08370610 0.25861030 0.66387577 0.35116881 0.33880931 0.07431788
-    [19] 0.54281711 0.58160045 0.09688529 0.32773497 0.67251650 0.34593674
-    [25] 0.07810757 0.13176582 1.00000001 0.36813368 0.27101113 0.33095474
-    [31] 0.32572143 1.00001112 0.38655282 0.30972457 0.17550569
+    [1] 0.08963589 0.09507032 0.05481134 0.07018293 0.08915338 0.81135637
+    [7] 0.06396457 0.98203585 1.00000612 1.00001372 1.00108067 0.39015408
+    [13] 0.07870654 0.17975205 0.22740883 0.11017509 0.25405912 0.09030207
+    [19] 0.60888662 0.55502352 0.08643765 0.36434743 0.69280218 0.08491926
+    [25] 0.09243409 0.05953276 1.00000000 0.46652109 0.07564509 0.26668928
+    [31] 0.30561270 1.00000043 0.11364500 0.25072592 0.99999233
+
 
    
 
 
     [INFO] Show annotation results...
-![2e84df1c21a02be5a72e2768c5580ae](https://user-images.githubusercontent.com/115637576/201280348-864beccb-3797-46b4-aa20-4305ec1a9416.png)
+![微信图片_20221121111208](https://user-images.githubusercontent.com/115637576/202955413-1362c778-0d2a-419f-9c12-191a63389100.png)
+
