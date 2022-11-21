@@ -100,10 +100,6 @@ In this tutorial we will use GSE136103 (Liver) as an example.
     [25] 0.09243409 0.05953276 1.00000000 0.46652109 0.07564509 0.26668928
     [31] 0.30561270 1.00000043 0.11364500 0.25072592 0.99999233
 
-
-   
-
-
     [INFO] Show annotation results...
 ![微信图片_20221121111208](https://user-images.githubusercontent.com/115637576/202955413-1362c778-0d2a-419f-9c12-191a63389100.png)
 
