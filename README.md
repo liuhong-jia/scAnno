@@ -79,18 +79,30 @@ In this tutorial we will use GSE136103 (Liver) as an example.
     Active assay: RNA (17020 features, 0 variable features)
 
     $predict_lable
-    [1] "T cell"              "T cell"              "T cell"
-    [4] "T cell"              "T cell"              "M2 Macrophage"
-    [7] "T cell"              "Mast cell"           "CB CD34+"
-    [10] "Neutrophil"          "Basal cell"          "Macrophage"
-    [13] "T cell"              "Endothelial cell"    "Monocyte"
-    [16] "Endothelial cell"    "Endothelial cell"    "T cell"
-    [19] "Macrophage"          "Smooth muscle cell"  "T cell"
-    [22] "Smooth muscle cell"  "B cell"              "Monocyte"
-    [25] "T cell"              "T cell"              "B cell (Plasmocyte)"
-    [28] "Dendritic cell"      "Endothelial cell"    "Endothelial cell"
-    [31] "B cell"              "Fibroblast"          "Endothelial cell"
-    [34] "Dendritic cell"      "Enterocyte"
+                   C0                    C1                    C2
+             "T cell"              "T cell"              "T cell"
+                   C3                    C4                    C5
+             "T cell"              "T cell"       "M2 Macrophage"
+                   C6                    C7                    C8
+             "T cell"           "Mast cell"            "CB CD34+"
+                   C9                   C10                   C11
+         "Neutrophil"          "Basal cell"          "Macrophage"
+                  C12                   C13                   C14
+             "T cell"    "Endothelial cell"            "Monocyte"
+                  C15                   C16                   C17
+   "Endothelial cell"    "Endothelial cell"              "T cell"
+                  C18                   C19                   C20
+         "Macrophage"  "Smooth muscle cell"              "T cell"
+                  C21                   C22                   C23
+ "Smooth muscle cell"              "B cell"            "Monocyte"
+                  C24                   C25                   C26
+             "T cell"              "T cell" "B cell (Plasmocyte)"
+                  C27                   C28                   C29
+     "Dendritic cell"    "Endothelial cell"    "Endothelial cell"
+                  C30                   C31                   C32
+             "B cell"          "Fibroblast"    "Endothelial cell"
+                  C33                   C34
+     "Dendritic cell"          "Enterocyte"
 
     $predict_score
     [1] 0.08963589 0.09507032 0.05481134 0.07018293 0.08915338 0.81135637
