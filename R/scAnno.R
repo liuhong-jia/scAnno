@@ -48,6 +48,7 @@ scAnno <- function(query = obj.seu, ref.expr = ref.expr, ref.anno = ref.anno, sh
 	ref.markers <- searchMarkersByCorr(GetAssayData(ref.obj) %>% as.matrix, seed.genes, scale.data = TRUE)
 	# Auto annotation using deconvolution and logistic regression methods.
 	sig.mat <- buildSigMatrix(ref.markers, avg.expr.ref, min.size = 10, max.size = 200)
+	ref.obj@misc$signature_matrix <- sig.mat
 	coef.vals <- rlmDewcon(sig.mat, AverageExpression(obj.seu,group.by="seurat_clusters",slot="data")$RNA, weight = NULL)
 	if(length(names(table(Idents(ref.obj))))<15){
 		signature.gene <- signature_gene(ref.obj,ref.markers)
@@ -60,13 +61,12 @@ scAnno <- function(query = obj.seu, ref.expr = ref.expr, ref.anno = ref.anno, sh
 		lr.pred.score <- lr.pred.res$cellType
 		colnames(lr.pred.score) <- paste("X",colnames(lr.pred.score) %>% as.numeric +1,sep="")
 		#Merge the scores of the two models
-		rownames(coef.vals)<-gsub('_',' ' ,rownames(coef.vals))
-		names <-cbind(rownames(coef.vals),names(table(Idents(ref.obj))))
-		rownames(lr.pred.score)<-gsub("_|&|\\+|\\.|-|/|\\(|\\)"," ",lr.pred.score %>% as.matrix %>% rownames(.))
+		rownames(coef.vals) <- gsub('_',' ' ,rownames(coef.vals))
+		names <- cbind(rownames(coef.vals),names(table(Idents(ref.obj))))
+		rownames(lr.pred.score) <- gsub("_|&|\\+|\\.|-|/|\\(|\\)"," ",lr.pred.score %>% as.matrix %>% rownames(.))
 		com.names<-intersect(rownames(coef.vals),rownames(lr.pred.score))
 		score = -log10(1- coef.vals[com.names,] %>% as.matrix * lr.pred.score[com.names,colnames(coef.vals)]+10^(-10))
 		rownames(score) <- names[match(rownames(score),names),2] 
-		#rownames(score) <- names(table(Idents(ref.obj)))
 		prop <- score/rowSums(score)
 		prop[prop<0 | is.na(prop)] <- 0
 		rate<-apply(prop,2,max) %>% as.vector  
