@@ -67,17 +67,17 @@ In this tutorial we will use GSE136103 (Liver) as an example.
     scAnno <- scAnno (query = obj.seu , ref.expr = ref.expr , ref.anno = ref.anno , gene.anno = gene.anno)
     
     $query
-An object of class Seurat
-21898 features across 16036 samples within 1 assay
-Active assay: RNA (21898 features, 2830 variable features)
- 2 dimensional reductions calculated: pca, umap
+    An object of class Seurat
+    21898 features across 16036 samples within 1 assay
+    Active assay: RNA (21898 features, 2830 variable features)
+    2 dimensional reductions calculated: pca, umap
 
-$reference
-An object of class Seurat
-17020 features across 5561 samples within 1 assay
-Active assay: RNA (17020 features, 0 variable features)
+    $reference
+    An object of class Seurat
+    17020 features across 5561 samples within 1 assay
+    Active assay: RNA (17020 features, 0 variable features)
 
-$predict_lable
+    $predict_lable
                    C0                    C1                    C2
              "T cell"              "T cell"              "T cell"
                    C3                    C4                    C5
