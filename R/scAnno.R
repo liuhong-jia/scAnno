@@ -53,8 +53,7 @@ scAnno <- function(query = obj.seu, ref.expr = ref.expr, ref.anno = ref.anno, sh
 	if(length(names(table(Idents(ref.obj))))<15){
 		signature.gene <- signature_gene(ref.obj,ref.markers)
 		lr.pred.res <- lrPredModel(ref.obj[signature.gene, ], obj.seu)
-		}
-		else{
+		} else {
 		markers.lst <- searchMarkersByROC(ref.obj[ref.markers %>% unlist(.) %>% unique,], return.thresh = 0.05)
 		lr.pred.res <- lrPredModel(ref.obj[markers.lst %>% unlist(.) %>% unique, ], obj.seu) 
 			} 
