@@ -1,28 +1,4 @@
 ##########################################################################################################
-#' @title downSamplSeurat
-#' @param obj Seurat object
-#' @param seed set random seed, default: 123
-#' @param percent Sampling ratio
-#' @return Seurat sub object
-#' @export 
-#' @example	
-
-##########################################################################################################
-
-downSamplSeurat <- function(obj, seed = 123, percent = 0.5){
-  set.seed(seed)
-  cells <- Idents(obj) %>% table
-  sub.cells <- sapply(names(cells), function(xx) {
-    sub.cells <- Idents(obj)[Idents(obj) == xx] %>% names
-    cnt <- ifelse(is.null(percent), cnt, length(sub.cells) * percent)
-    if (length(sub.cells) > cnt) 
-      sub.cells <- sample(sub.cells, cnt, replace = FALSE)
-    return(sub.cells) }) %>% unlist(use.names = F)
-  subset(obj, cells = sub.cells)
-}
-
-
-##########################################################################################################
 #' @title identSeedGenes
 #' @param avg.expr Reference gene expression profile.
 #' @param factor.size Factor size to scale the weight. Default: 0.1.
