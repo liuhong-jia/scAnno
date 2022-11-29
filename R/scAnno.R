@@ -68,8 +68,9 @@ scAnno <- function(query = obj.seu, ref.expr = ref.expr, ref.anno = ref.anno, sh
 		rownames(score) <- names[match(rownames(score),names),2] 
 		prop <- score/rowSums(score)
 		prop[prop<0 | is.na(prop)] <- 0
-		rate<-apply(prop,2,max) %>% as.vector  
-		lable<-apply(prop,2, function(t) rownames(prop)[which.max(t)]) %>% as.vector
+		rate <- apply(prop,2,max) %>% as.vector  
+		lable <- apply(prop,2, function(t) rownames(prop)[which.max(t)]) %>% as.vector
+	        names(lable) <- paste("C",levels(obj.seu$seurat_clusters),sep = "")
 		obj.seu <- AddMetaData(obj.seu,metadata = obj.seu $seurat_clusters %>% as.vector,col.name='scAnno')
 		cell.cnts <- table(Idents(obj.seu))
 		#Assign new annotation labels to the test set.
