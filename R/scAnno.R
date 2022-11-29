@@ -50,7 +50,7 @@ scAnno <- function(query = obj.seu, ref.expr = ref.expr, ref.anno = ref.anno, sh
 	sig.mat <- buildSigMatrix(ref.markers, avg.expr.ref, min.size = 10, max.size = 200)
 	ref.obj@misc$signature_matrix <- sig.mat
 	coef.vals <- rlmDewcon(sig.mat, AverageExpression(obj.seu,group.by="seurat_clusters",slot="data")$RNA, weight = NULL)
-	if(length(names(table(Idents(ref.obj))))<15){
+	if(length(names(table(Idents(ref.obj)))) < 15){
 		signature.gene <- signature_gene(ref.obj,ref.markers)
 		lr.pred.res <- lrPredModel(ref.obj[signature.gene, ], obj.seu)
 		} else {
@@ -74,7 +74,7 @@ scAnno <- function(query = obj.seu, ref.expr = ref.expr, ref.anno = ref.anno, sh
 		obj.seu <- AddMetaData(obj.seu,metadata = obj.seu $seurat_clusters %>% as.vector,col.name='scAnno')
 		cell.cnts <- table(Idents(obj.seu))
 		#Assign new annotation labels to the test set.
-		anno.res<-apply(prop,2,which.max) %>% rownames(prop)[.]
+		anno.res <- apply(prop,2,which.max) %>% rownames(prop)[.]
 		for(i in 0:length(levels(obj.seu$seurat_clusters))-1){
 		obj.seu$scAnno[obj.seu$seurat_clusters==i]<-anno.res[i+1]
 			}
