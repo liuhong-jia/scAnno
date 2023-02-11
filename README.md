@@ -63,7 +63,7 @@ In this tutorial we will use GSE136103 (Liver) as an example.
 # single cell annotation
 
 ***
-	scAnno <- scAnno(query = obj.seu,
+	scAnno(query = obj.seu,
 	ref.expr = ref.expr,
 	ref.anno = ref.anno ,
 	save.markers = "ref.markers",
@@ -77,9 +77,7 @@ In this tutorial we will use GSE136103 (Liver) as an example.
 	permut.num = 100,
 	show.plot = TRUE,
 	verbose = TRUE)
-
-
-    
+	
 	$query
 	An object of class Seurat
     	21898 features across 16036 samples within 1 assay
