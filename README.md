@@ -83,8 +83,7 @@ In this tutorial we will use GSE136103 (Liver) as an example.
 	21898 features across 16036 samples within 1 assay
 	Active assay: RNA (21898 features, 2830 variable features)
 	2 dimensional reductions calculated: pca, umap
-
-    	$reference
+	$reference
 	An object of class Seurat
 	17020 features across 5561 samples within 1 assay
 	Active assay: RNA (17020 features, 0 variable features)
