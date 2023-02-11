@@ -64,7 +64,9 @@ In this tutorial we will use GSE136103 (Liver) as an example.
 
 ***
 
-    scAnno <- scAnno (query = obj.seu , ref.expr = ref.expr , ref.anno = ref.anno , gene.anno = gene.anno)
+   scAnno <- scAnno(query = obj.seu,ref.expr = ref.expr,ref.anno = ref.anno , save.markers = "ref.markers",cluster.col = "seurat_clusters",factor.size = 0.1,pvalue.cut     = 0.01,method ="co.exp",seed.num = 10, redo.markers = FALSE,gene.anno = gene.anno,permut.num = 100,show.plot = TRUE,verbose = TRUE)
+
+
     
     $query
     An object of class Seurat
@@ -77,40 +79,48 @@ In this tutorial we will use GSE136103 (Liver) as an example.
     17020 features across 5561 samples within 1 assay
     Active assay: RNA (17020 features, 0 variable features)
 
-    $predict_lable
-                   C0                    C1                    C2
-             "T cell"              "T cell"              "T cell"
-                   C3                    C4                    C5
-             "T cell"              "T cell"       "M2 Macrophage"
-                   C6                    C7                    C8
-             "T cell"           "Mast cell"            "CB CD34+"
-                   C9                   C10                   C11
-         "Neutrophil"          "Basal cell"          "Macrophage"
-                  C12                   C13                   C14
-             "T cell"    "Endothelial cell"            "Monocyte"
-                  C15                   C16                   C17
-    "Endothelial cell"    "Endothelial cell"              "T cell"
-                  C18                   C19                   C20
-         "Macrophage"  "Smooth muscle cell"              "T cell"
-                  C21                   C22                   C23
-    "Smooth muscle cell"              "B cell"            "Monocyte"
-                  C24                   C25                   C26
-             "T cell"              "T cell" "B cell (Plasmocyte)"
-                  C27                   C28                   C29
-        "Dendritic cell"    "Endothelial cell"    "Endothelial cell"
-                  C30                   C31                   C32
-             "B cell"          "Fibroblast"    "Endothelial cell"
-                  C33                   C34
-     "Dendritic cell"          "Enterocyte"
+    $pred.label
+                   C0                    C1                    C2 
+             "T cell"              "T cell"              "T cell" 
+                   C3                    C4                    C5 
+             "T cell"              "T cell"      "Dendritic cell" 
+                   C6                    C7                    C8 
+             "T cell"              "T cell"              "T cell" 
+                   C9                   C10                   C11 
+           "Monocyte"     "Epithelial cell"          "Macrophage" 
+                  C12                   C13                   C14 
+             "T cell"    "Endothelial cell"            "Monocyte" 
+                  C15                   C16                   C17 
+   "Endothelial cell"    "Endothelial cell"              "T cell" 
+                  C18                   C19                   C20 
+         "Macrophage"  "Smooth muscle cell"              "T cell" 
+                  C21                   C22                   C23 
+ "Smooth muscle cell"              "B cell"            "Monocyte" 
+                  C24                   C25                   C26 
+             "T cell"              "T cell" "B cell (Plasmocyte)" 
+                  C27                   C28                   C29 
+     "Dendritic cell"    "Endothelial cell"    "Endothelial cell" 
+                  C30                   C31                   C32 
+             "B cell"        "Stromal cell"    "Endothelial cell" 
+                  C33                   C34 
+     "Dendritic cell"     "Epithelial cell"
 
-    $predict_score
-    [1] 0.08963589 0.09507032 0.05481134 0.07018293 0.08915338 0.81135637
-    [7] 0.06396457 0.98203585 1.00000612 1.00001372 1.00108067 0.39015408
-    [13] 0.07870654 0.17975205 0.22740883 0.11017509 0.25405912 0.09030207
-    [19] 0.60888662 0.55502352 0.08643765 0.36434743 0.69280218 0.08491926
-    [25] 0.09243409 0.05953276 1.00000000 0.46652109 0.07564509 0.26668928
-    [31] 0.30561270 1.00000043 0.11364500 0.25072592 0.99999233
+    $pred.score
+	[1] 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 1.00 0.70 0.99 1.00 1.00
+	[15] 0.98 0.99 1.00 1.00 0.99 1.00 1.00 1.00 1.00 0.87 1.00 1.00 1.00 1.00
+	[29] 1.00 1.00 0.95 0.50 0.97 1.00 0.75
+    
+    $pvals
+     C0      C1      C2      C3      C4      C5      C6      C7      C8 
+	2.7e-17 2.9e-17 3.6e-17 2.7e-17 2.7e-17 0.0e+00 2.7e-17 1.6e-16 1.0e-16 
+     C9     C10     C11     C12     C13     C14     C15     C16     C17 
+	0.0e+00 0.0e+00 0.0e+00 2.7e-17 0.0e+00 0.0e+00 0.0e+00 0.0e+00 2.7e-17 
+    C18     C19     C20     C21     C22     C23     C24     C25     C26 
+	0.0e+00 0.0e+00 2.7e-17 0.0e+00 0.0e+00 0.0e+00 2.7e-17 2.8e-17 0.0e+00 
+    C27     C28     C29     C30     C31     C32     C33     C34 
+	0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00
 
     [INFO] Show annotation results...
-![微信图片_20221121111208](https://user-images.githubusercontent.com/115637576/202955413-1362c778-0d2a-419f-9c12-191a63389100.png)
+![c75c451c3a993d5f5a78adae32947c4](https://user-images.githubusercontent.com/115637576/218242912-44df6b81-7501-4840-aa1d-d97bb7121aea.png)
+
 
