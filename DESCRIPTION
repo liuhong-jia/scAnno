@@ -11,16 +11,21 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.0
 Depends: 
 	R (>= 2.10.0), 
-	Seurat,
-	dplyr,
-	reticulate
+	methods, 
+	Matrix (>= 1.2.6), 
+	Biobase, 
+	ggplot2 (>= 1.0.0),
+	future
 Imports:
+	dplyr,
+	Seurat,
+	patchwork,
+	tidyr,
 	MASS,
-	irlba,	
-	future,
-	progress,
-	parallel,
-	glmnet
+	irlba,
+	reticulate,
+	glmnet,
+	parallel
 Suggests:
     devtools,
     knitr,
