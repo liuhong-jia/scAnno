@@ -1,0 +1,28 @@
+Package: scAnno
+Title: A deconvolution strategy-based automatic cell type annotation tool for single-cell RNA sequencing datasets.
+Version: 1.0.0
+Author: Hongjia Liu & Huamei Li
+Maintainer: Hongjia Liu <230218827@seu.edu.cn> & Huamei Li <li_hua_mei@163.com>.
+Description: A novel method for automatic annotation of single cell data.
+Date: 2022-11-1
+License: GPL-3.0
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0
+Depends: 
+	R (>= 2.10.0), 
+	Seurat,
+	dplyr,
+	reticulate
+Imports:
+	MASS,
+	irlba,	
+	future,
+	progress,
+	parallel,
+	glmnet
+Suggests:
+    devtools,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
