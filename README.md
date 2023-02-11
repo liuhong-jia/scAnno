@@ -63,20 +63,33 @@ In this tutorial we will use GSE136103 (Liver) as an example.
 # single cell annotation
 
 ***
-	scAnno <- scAnno(query = obj.seu,ref.expr = ref.expr,ref.anno = ref.anno , save.markers = "ref.markers",cluster.col = "seurat_clusters",factor.size = 	0.1,pvalue.cut     = 0.01,method ="co.exp",seed.num = 10, redo.markers = FALSE,gene.anno = gene.anno,permut.num = 100,show.plot = TRUE,verbose = TRUE)
+	scAnno <- scAnno(query = obj.seu,
+	ref.expr = ref.expr,
+	ref.anno = ref.anno ,
+	save.markers = "ref.markers",
+	cluster.col = "seurat_clusters",
+	factor.size = 0.1,
+	pvalue.cut  = 0.01,
+	method ="co.exp",
+	seed.num = 10, 
+	redo.markers = FALSE,
+	gene.anno = gene.anno,
+	permut.num = 100,
+	show.plot = TRUE,
+	verbose = TRUE)
 
 
     
-    $query
-    An object of class Seurat
-    21898 features across 16036 samples within 1 assay
-    Active assay: RNA (21898 features, 2830 variable features)
-    2 dimensional reductions calculated: pca, umap
+	$query
+	An object of class Seurat
+    	21898 features across 16036 samples within 1 assay
+    	Active assay: RNA (21898 features, 2830 variable features)
+    	2 dimensional reductions calculated: pca, umap
 
-    $reference
-    An object of class Seurat
-    17020 features across 5561 samples within 1 assay
-    Active assay: RNA (17020 features, 0 variable features)
+    	$reference
+    	An object of class Seurat
+    	17020 features across 5561 samples within 1 assay
+	Active assay: RNA (17020 features, 0 variable features)
 
     $pred.label
                    C0                    C1                    C2 
