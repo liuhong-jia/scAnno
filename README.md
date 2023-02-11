@@ -78,6 +78,20 @@ In this tutorial we will use GSE136103 (Liver) as an example.
 	show.plot = TRUE,
 	verbose = TRUE)
 	
+	[INFO] Checking the legality of parameters
+	[INFO] 30 cell types in reference, 35 clusters in query objects
+	[INFO] Deconvolution by using RLM method
+	[INFO] Logistic regression for cell-type predictions, waiting...
+	[INFO] Merging the scores of both models, and assign annotations to clusters
+	[INFO] Estimating p-values for annotations...
+	[INFO] Finish![INFO] Checking the legality of parameters
+	[INFO] 30 cell types in reference, 35 clusters in query objects
+	[INFO] Deconvolution by using RLM method
+	[INFO] Logistic regression for cell-type predictions, waiting...
+	[INFO] Merging the scores of both models, and assign annotations to clusters
+	[INFO] Estimating p-values for annotations...
+	[INFO] Finish!
+	
 	$query
 	An object of class Seurat
 	21898 features across 16036 samples within 1 assay
