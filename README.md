@@ -46,6 +46,10 @@ In this tutorial we will use GSE136103 (Liver) as an example.
     
     [INFO] Protein-coding genes.
     
+    data(tcga.data.u)
+    
+    [INFO] bulk RNA-seq data of pan-cancer in TCGA.
+    
     data(GSE136103)
     
     obj.seu <- GSE136103
