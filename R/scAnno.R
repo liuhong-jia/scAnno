@@ -16,7 +16,7 @@ options(warn = -1)
 #' @param permut.num  Number of permutations for estimating p-values of annotations. Default: 100.
 #' @param show.plot Show annotated results or not. Default: TRUE.
 #' @param verbose Show running messages or not. Default: TRUE.
-#' @param tcga.data.u Bulk data of pan-cancer in TCGA. 
+#' @param tcga.data.u bulk RNA-seq data of pan-cancer in TCGA. 
 #' @return Annotated Seurat object.Default: tcga.data.u
 #' @export 
 #' @example	
@@ -161,6 +161,6 @@ scAnno <- function(
 		(DimPlot(obj.seu, group.by = cluster.col, label = TRUE) | DimPlot(obj.seu, group.by = 'scAnno', label = TRUE)) %>% print
 	}
 	println('[INFO] Finish!', verbose = verbose)
-	return(list(query = obj.seu, pred.label = anno.res$label, pred.score = anno.res$score, pvals = pvals))
+	return(list(query = obj.seu, pred.label = anno.res$label, pred.score = anno.score, pvals = pvals))
 }
 
