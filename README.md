@@ -80,7 +80,9 @@ In this tutorial we will use GSE136103 (Liver) as an example.
 	gene.anno = gene.anno,
 	permut.num = 100,
 	show.plot = TRUE,
-	verbose = TRUE)
+	verbose = TRUE,
+	tcga.data.u = tcga.data.u
+	)
 	
 	[INFO] Checking the legality of parameters
 	[INFO] 30 cell types in reference, 35 clusters in query objects
