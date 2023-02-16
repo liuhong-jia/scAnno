@@ -72,13 +72,7 @@ In this tutorial we will use GSE136103 (Liver) as an example.
 	ref.anno = ref.anno ,
 	save.markers = "ref.markers",
 	cluster.col = "seurat_clusters",
-	factor.size = 0.1,
-	pvalue.cut  = 0.01,
-	method ="co.exp",
-	seed.num = 10, 
-	redo.markers = TRUE,
 	gene.anno = gene.anno,
-	permut.num = 100,
 	show.plot = TRUE,
 	verbose = TRUE,
 	tcga.data.u = tcga.data.u
