@@ -16,7 +16,7 @@ rlmDewcon <- function(ref, bulk){
   coefs <- c()
   for(i in 1 : ncol(bulk)){
     data.test <- cbind.data.frame(ref, mix = bulk[, i])
-    lmfit <- MASS::rlm(mix ~ . - 1, data = data.test, maxit = 60)
+    lmfit <- MASS::rlm(mix ~ . - 1, data = data.test, maxit = 70)
     coef <- lmfit$coefficients
     coef[coef < 0] <- 0
     coefs <- rbind(coefs, coef / sum(coef))
