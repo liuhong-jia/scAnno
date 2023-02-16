@@ -9,7 +9,6 @@
 #' @export 
 
 ##########################################################################################################
-options(warn=-1)
 
 searchMarkersByCorr <- function(ref.expr, query.genes, scale.data = TRUE, p.cut = 0.1, seed.num = 10, tcga.data.u = NULL) {
 	if (!inherits(query.genes, 'list')) stop(sprintf('%s must be a list of query genes, exiting...', deparse(substitute(query.genes))))
