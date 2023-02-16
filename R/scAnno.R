@@ -78,13 +78,10 @@ scAnno <- function(
 					seed.num = seed.num,
 					tcga.data.u = tcga.data.u
 				)
-                ref.markers <- list()
-				for (i in 1:length(ref.markers_single)){
-				ref.markers[[i]] <- intersect(ref.markers_single[[i]],ref.markers_bulk[[i]])
-				ifelse (length(ref.markers[[i]]) < 100,ref.markers[[i]] <- ref.markers_single[[i]],ref.markers[[i]] <- ref.markers[[i]])
-				}
-				names(ref.markers) <- names(ref.markers_single)
-				ref.markers = ref.markers
+                		ref.markers <- lapply(1:length(ref.markers_single),function(idx){
+				genes <- intersect(unlist(ref.markers_single[idx]),unlist(ref.markers_bulk[idx]))
+				if(length(genes) < 100){genes <- unlist(ref.markers_single[idx])}else{return (genes)}
+				}) %>% `names<-`(names(ref.markers_single))
 			},
 			diff.exp = {
 				ref.markers <- searchMarkersByASeurat(ref.obj)
