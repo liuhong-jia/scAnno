@@ -65,8 +65,6 @@ In this tutorial we will use GSE136103 (Liver) as an example.
 	save.markers = "ref.markers",
 	cluster.col = "seurat_clusters",
 	gene.anno = gene.anno,
-	show.plot = TRUE,
-	verbose = TRUE,
 	tcga.data.u = tcga.data.u
 	)
 	
