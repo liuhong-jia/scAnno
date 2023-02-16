@@ -6,7 +6,7 @@
 #' @return 
 
 ##########################################################################################################
-
+options(warn = -1)
 rlmDewcon <- function(ref, bulk){
   over.genes <- intersect(rownames(ref),rownames(bulk))
   bulk <- bulk[over.genes, ,drop = F] %>% `colnames<-`(paste0('C', colnames(bulk)))
