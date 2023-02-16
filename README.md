@@ -76,7 +76,7 @@ In this tutorial we will use GSE136103 (Liver) as an example.
 	pvalue.cut  = 0.01,
 	method ="co.exp",
 	seed.num = 10, 
-	redo.markers = FALSE,
+	redo.markers = TRUE,
 	gene.anno = gene.anno,
 	permut.num = 100,
 	show.plot = TRUE,
