@@ -80,7 +80,7 @@ scAnno <- function(
 				)
                 		ref.markers <- lapply(1:length(ref.markers_single),function(idx){
 					genes <- intersect(unlist(ref.markers_single[idx]),unlist(ref.markers_bulk[idx]))
-					if(length(genes) < 100){genes <- unlist(ref.markers_single[idx])}else{return (genes)}
+					if(length(genes) < 20){genes <- unlist(ref.markers_single[idx])}else{return (genes)}
 				}) %>% `names<-`(names(ref.markers_single))
 			},
 			diff.exp = {
