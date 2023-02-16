@@ -81,7 +81,7 @@ scAnno <- function(
                 ref.markers <- list()
 				for (i in 1:length(ref.markers_single)){
 				ref.markers[[i]] <- intersect(ref.markers_single[[i]],ref.markers_bulk[[i]])
-				ifelse (length(ref.markers[[i]]) < 20,ref.markers[[i]] <- ref.markers_single[[i]],ref.markers[[i]] <- ref.markers[[i]])
+				ifelse (length(ref.markers[[i]]) < 100,ref.markers[[i]] <- ref.markers_single[[i]],ref.markers[[i]] <- ref.markers[[i]])
 				}
 				names(ref.markers) <- names(ref.markers_single)
 				ref.markers = ref.markers
