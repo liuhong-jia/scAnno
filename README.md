@@ -3,8 +3,8 @@
 ***
 
 A deconvolution strategy-based automatic cell type annotation tool for single-cell RNA sequencing datasets.
-![image](https://user-images.githubusercontent.com/115637576/199387392-3d66fb26-e3d3-43c9-9378-04f541600e3f.png)
 
+![1676537300167](https://user-images.githubusercontent.com/115637576/219314316-ee86d8b1-48ec-4d76-a96d-72d7130ca8e5.png)
 
 # Installing the package
 
