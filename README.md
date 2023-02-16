@@ -44,21 +44,13 @@ In this tutorial we will use GSE136103 (Liver) as an example.
     
     data(gene.anno)
     
-    [INFO] Protein-coding genes.
-    
     data(tcga.data.u)
-    
-    [INFO] bulk RNA-seq data of pan-cancer in TCGA.
     
     data(GSE136103)
     
     obj.seu <- GSE136103
     
-    [INFO] 35 single-cell clusters that need to be annotated.
-    
     ref.obj <- Human_cell_landscape
-    
-    [INFO] Reference spectrum of human cell landscape, including 63 cell types across more than 50 tissue types.
     
     ref.expr <- GetAssayData(ref.obj, slot = 'data') %>% as.data.frame
     
