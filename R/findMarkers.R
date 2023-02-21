@@ -11,6 +11,7 @@
 ##########################################################################################################
 
 searchMarkersByCorr <- function(ref.expr, query.genes, scale.data = TRUE, p.cut = 0.1, seed.num = 10, tcga.data.u = NULL) {
+	options (warn = -1)
 	if (!inherits(query.genes, 'list')) stop(sprintf('%s must be a list of query genes, exiting...', deparse(substitute(query.genes))))
 	if (scale.data) {
 		ref.expr <- sweep(ref.expr, 1, apply(ref.expr, 1, mean), "-")
