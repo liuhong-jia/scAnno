@@ -32,7 +32,7 @@ searchMarkersByCorr <- function(ref.expr, query.genes, scale.data = TRUE, p.cut 
 		colnames(cor.mat) <- colnames(data.u)
 		rownames(cor.mat) <- QGs
 		if (seed.num > 1) {
-			cor.vec <- colMeans(atanh(cor.mat[seq_len(length(QGs)), -c(which(colnames(cor.mat) %in% QGs))]) %>% !is.nan(.))
+			cor.vec <- colMeans(atanh(cor.mat[seq_len(length(QGs)), -c(which(colnames(cor.mat) %in% QGs))]) %>% [!is.nan(.)])
 		} else {
 			cor.vec <- colMeans(atanh(cor.mat[seq_len(length(QGs)), -c(which(colnames(cor.mat) %in% QGs))]) %>% as.data.frame %>% t)
 		}
