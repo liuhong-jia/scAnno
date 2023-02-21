@@ -36,6 +36,7 @@ searchMarkersByCorr <- function(ref.expr, query.genes, scale.data = TRUE, p.cut 
 		} else {
 			cor.vec <- colMeans(atanh(cor.mat[seq_len(length(QGs)), -c(which(colnames(cor.mat) %in% QGs))]) %>% as.data.frame %>% t)
 		}
+		cor.vec[!is.nan(cor.vec)]
 		cor.vec[order(cor.vec) %>% rev]		
 		pvals <- pnorm(cor.vec, mean = mean(cor.vec), sd = sd(cor.vec), lower.tail = FALSE)
 		c(QGs, pvals[pvals < p.cut] %>% names) %>% unique
