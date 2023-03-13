@@ -8,10 +8,11 @@ scAnno is an automated annotation tool for single-cell RNA sequencing datasets p
 # Installing the package
 
 ***
- You can install the package using devtools::install_github:
- To install scAnno,we recommed using devtools:
-	#install.packages("devtools")
-	devtools::install_github("liuhong-jia/scAnno")
+
+You can install the package using devtools::install_github:
+To install scAnno,we recommed using devtools:
+    #install.packages("devtools")
+    devtools::install_github("liuhong-jia/scAnno")
 
 # Getting started with scAnno
 
