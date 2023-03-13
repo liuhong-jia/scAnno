@@ -2,28 +2,32 @@
 
 ***
 
-A deconvolution strategy-based automatic cell type annotation tool for single-cell RNA sequencing datasets.
-
+scAnno(single cell annotation)
+scAnno is an automated annotation tool for single-cell RNA sequencing datasets primarily based on the single cell cluster levels, using a joint deconvolution strategy and logistic regression. We explicitly created a complete reference atlas (reference expression profiles) of 30 cell types from the Human Cell Landscape (HCL) covering more than 50 human tissues to support this novel methodology (scAnno). scAnno offers a possibility to obtain genes with high expression and specificity in a given cell type as cell type-specific genes (marker genes) by combining co-expression genes with seed genes as a core. Of importance, scAnno can accurately identify cell type-specific genes based on cell type reference expression profiles without any prior information. 
 ![1676537300167](https://user-images.githubusercontent.com/115637576/219314316-ee86d8b1-48ec-4d76-a96d-72d7130ca8e5.png)
 
 # Installing the package
 
 ***
-
 You can install the package using devtools::install_github:
-
+To install scAnno,we recommed using devtools:
+    #install.packages("devtools")
     devtools::install_github("liuhong-jia/scAnno")
 
 # Getting started with scAnno
 
 ***
 
+#Dependencies
+R version >= 2.10.0
+R packages:Seurat,dplyr,reticulate,MASS,irlba,future,progress,parallel,glmnet,knitr,rmarkdown
+
 In this tutorial we will use GSE136103 (Liver) as an example.
 
     library(scAnno)
     
     data(Human_cell_landscape)
-    
+    #
     data(gene.anno)
     
     data(tcga.data.u)
