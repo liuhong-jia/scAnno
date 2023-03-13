@@ -18,8 +18,8 @@ To install scAnno,we recommed using devtools:
 ***
 
 # Dependencies
-\\.R version >= 2.10.0  
-\\.R packages:Seurat,dplyr,reticulate,MASS,irlba,future,progress,parallel,glmnet,knitr,rmarkdown
+- R version >= 2.10.0  
+- R packages:Seurat,dplyr,reticulate,MASS,irlba,future,progress,parallel,glmnet,knitr,rmarkdown
 
 # Example
 In this tutorial we will use GSE136103 (Liver) as an example.
@@ -28,18 +28,25 @@ In this tutorial we will use GSE136103 (Liver) as an example.
     
     data(Human_cell_landscape)
     #Import human cell type reference spectrum.
+    
     data(gene.anno)
     #Import protein coding gene.
+    
     data(tcga.data.u)
     #Import TCGA bulk data in pan-cancer.
+    
     data(GSE136103)
     #A liver tissue data set to be annotated.
+    
     obj.seu <- GSE136103
     #Seurat object, which need to be annotated.
+    
     ref.obj <- Human_cell_landscape
     #Seurat object,cell type reference spectrum.
+    
     ref.expr <- GetAssayData(ref.obj, slot = 'data') %>% as.data.frame
     #reference gene expression profile. 
+    
     ref.anno <- Idents(ref.obj) %>% as.character
     #Cell type information of reference profile, corresponding to the above `ref.expr`.
 # single cell annotation
