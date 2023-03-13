@@ -18,7 +18,7 @@ To install scAnno,we recommed using devtools:
 
 # Dependencies
 - R version >= 2.10.0.
-- R packages: Seurat, dplyr, reticulate, MASS, irlba, future, progress, parallel, glmnet, knitr, rmarkdown
+- R packages: Seurat, dplyr, reticulate, MASS, irlba, future, progress, parallel, glmnet, knitr, rmarkdown, devtools
 
 # Example
 In this tutorial we will use GSE136103 (Liver) as an example.
