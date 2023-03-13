@@ -1,8 +1,6 @@
-# scAnno
+# scAnno(single cell annotation)
 
 ***
-
-#scAnno(single cell annotation)
 
 scAnno is an automated annotation tool for single-cell RNA sequencing datasets primarily based on the single cell cluster levels, using a joint deconvolution strategy and logistic regression. We explicitly created a complete reference atlas (reference expression profiles) of 30 cell types from the Human Cell Landscape (HCL) covering more than 50 human tissues to support this novel methodology (scAnno). scAnno offers a possibility to obtain genes with high expression and specificity in a given cell type as cell type-specific genes (marker genes) by combining co-expression genes with seed genes as a core. Of importance, scAnno can accurately identify cell type-specific genes based on cell type reference expression profiles without any prior information. 
 ![1676537300167](https://user-images.githubusercontent.com/115637576/219314316-ee86d8b1-48ec-4d76-a96d-72d7130ca8e5.png)
@@ -19,30 +17,31 @@ To install scAnno,we recommed using devtools:
 
 ***
 
-#Dependencies
+# Dependencies
 R version >= 2.10.0
 R packages:Seurat,dplyr,reticulate,MASS,irlba,future,progress,parallel,glmnet,knitr,rmarkdown
 
+# Example
 In this tutorial we will use GSE136103 (Liver) as an example.
 
     library(scAnno)
     
     data(Human_cell_landscape)
-    #
+    #Import human cell type reference spectrum.
     data(gene.anno)
-    
+    #Import protein coding gene.
     data(tcga.data.u)
-    
+    #Import TCGA bulk data in pan-cancer.
     data(GSE136103)
-    
+    #A liver tissue data set to be annotated.
     obj.seu <- GSE136103
-    
+    #Seurat object, which need to be annotated.
     ref.obj <- Human_cell_landscape
-    
+    #Seurat object,cell type reference spectrum.
     ref.expr <- GetAssayData(ref.obj, slot = 'data') %>% as.data.frame
-    
+    #reference gene expression profile. 
     ref.anno <- Idents(ref.obj) %>% as.character
-
+    #Cell type information of reference profile, corresponding to the above `ref.expr`.
 # single cell annotation
 
 ***
