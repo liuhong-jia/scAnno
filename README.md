@@ -24,7 +24,7 @@ To install scAnno,we recommed using devtools:
 For this tutorial, we apply the human single cell reference atlas(Human_cell_landscape) built into the package to predict a scRNA-seq dataset(GSE136103) derived from liver tissue that has been processed by the standard Seurat process and entered as a query object.
 
 
-# Example
+# Prepare input data
 
     library(scAnno)
     
@@ -59,13 +59,13 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
 **Note**:The parameter save.markers means that the marker genes will be stored in a temporary file, so that the next time the same reference expression is used, it will not have to be run again.
 # single cell annotation
     obj.seu <- GSE136103
-    #Seurat object, which need to be annotated.
+    # Seurat object, which need to be annotated.
     
     ref.obj <- Human_cell_landscape
-    #Seurat object,cell type reference spectrum.
+    #Seurat object of reference gene expression profile
     
     ref.expr <- GetAssayData(ref.obj, slot = 'data') %>% as.data.frame
-    #reference gene expression profile. 
+    #Reference gene expression profile.
     
     ref.anno <- Idents(ref.obj) %>% as.character
     #Cell type information of reference profile, corresponding to the above `ref.expr`.
