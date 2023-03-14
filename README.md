@@ -20,7 +20,7 @@ To install scAnno,we recommed using devtools:
 - R version >= 2.10.0.
 - R packages: Seurat, dplyr, reticulate, MASS, irlba, future, progress, parallel, glmnet, knitr, rmarkdown, devtools
 
-#Guided Tutorials
+# Guided Tutorials
 For this tutorial, we apply the human single cell reference atlas(Human_cell_landscape) built into the package to predict a scRNA-seq dataset(GSE136103) derived from liver tissue that has been processed by the standard Seurat process and entered as a query object.
 
 
@@ -39,11 +39,23 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
     #Import protein coding gene, 19814 genes to filter reference expression profile.
     
     data(tcga.data.u)
-    #Import TCGA bulk data in pan-cancer,19459 genes in 100 principal components.
+    #Import TCGA bulk data in pan-cancer.
     
     data(GSE136103)
     #A liver tissue data set to be annotated.
     
+  
+# Set parameters
+|Parameters|Description                              |
+|----------|-----------------------------------------|
+|query     |Seurat object, which need to be annotated|
+|ref.expr  |Reference gene expression profile.       |
+|ref.anno  |Cell type information of reference profile, corresponding to the above `ref.expr`.|
+|save.markers|Specified the filename of makers need to be saved.|
+|cluster.col|Column name of clusters to be annotated in meta.data slot of query Seurat object. Default: seurat_clusters.|
+|gene.anno|Gene annotation data.frame. Default: gene.anno.|
+|tcga.data.u|bulk RNA-seq data of pan-cancer in TCGA.|
+# single cell annotation
     obj.seu <- GSE136103
     #Seurat object, which need to be annotated.
     
@@ -55,7 +67,8 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
     
     ref.anno <- Idents(ref.obj) %>% as.character
     #Cell type information of reference profile, corresponding to the above `ref.expr`.
-# single cell annotation
+
+
 
 ***
 	scAnno(query = obj.seu,
