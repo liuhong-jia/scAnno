@@ -20,19 +20,26 @@ To install scAnno,we recommed using devtools:
 - R version >= 2.10.0.
 - R packages: Seurat, dplyr, reticulate, MASS, irlba, future, progress, parallel, glmnet, knitr, rmarkdown, devtools
 
+#Guided Tutorials
+For this tutorial, we apply the human single cell reference atlas(Human_cell_landscape) built into the package to predict a scRNA-seq dataset(GSE136103) derived from liver tissue that has been processed by the standard Seurat process and entered as a query object.
+
+
 # Example
-In this tutorial we will use GSE136103 (Liver) as an example.
 
     library(scAnno)
     
     data(Human_cell_landscape)
-    #Import human cell type reference spectrum.
+    #Import human cell type reference profile.
+    An object of class Seurat 
+    26291 features across 5856 samples within 1 assay 
+    Active assay: RNA (26291 features, 2000 variable features)
+    2 dimensional reductions calculated: pca, umap
     
     data(gene.anno)
-    #Import protein coding gene.
+    #Import protein coding gene, 19814 genes to filter reference expression profile.
     
     data(tcga.data.u)
-    #Import TCGA bulk data in pan-cancer.
+    #Import TCGA bulk data in pan-cancer,19459 genes in 100 principal components.
     
     data(GSE136103)
     #A liver tissue data set to be annotated.
