@@ -157,6 +157,6 @@ scAnno can generate two seurat object and three output matrices in a result list
     	C27     C28     C29     C30     C31     C32     C33     C34 
 	0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00
 
-    [INFO] Show annotation results...
+Show annotation results...
 ![c75c451c3a993d5f5a78adae32947c4](https://user-images.githubusercontent.com/115637576/218242912-44df6b81-7501-4840-aa1d-d97bb7121aea.png)
 
