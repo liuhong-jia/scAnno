@@ -32,7 +32,7 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
     #Import human cell type reference profile.
     
     data(gene.anno)
-    #Import protein coding gene, 19814 genes to filter reference expression profile.
+    #Import protein coding gene(19814 genes) to filter reference expression profile.
     
     data(tcga.data.u)
     #Import TCGA bulk data in pan-cancer.
