@@ -30,6 +30,7 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
     
     data(Human_cell_landscape)
     #Import human cell type reference profile.
+    
     An object of class Seurat 
     26291 features across 5856 samples within 1 assay 
     Active assay: RNA (26291 features, 2000 variable features)
