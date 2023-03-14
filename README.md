@@ -31,11 +31,6 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
     data(Human_cell_landscape)
     #Import human cell type reference profile.
     
-    An object of class Seurat 
-    26291 features across 5856 samples within 1 assay 
-    Active assay: RNA (26291 features, 2000 variable features)
-    2 dimensional reductions calculated: pca, umap
-    
     data(gene.anno)
     #Import protein coding gene, 19814 genes to filter reference expression profile.
     
@@ -72,7 +67,7 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
     #Cell type information of reference profile, corresponding to the above `ref.expr`.
 # Run scAnno to annotate cell types
 scAnno can generate two seurat object and three output matrices in a result list.More details of the results is described in the table below.
-|output|details|
+|**output**|**details**|
 |------|-------|
 |query|Seurat object, which need to be annotated.|
 |reference|Seurat object of reference gene expression profile.|
