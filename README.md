@@ -52,7 +52,7 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
 |gene.anno|Gene annotation data.frame. Default: gene.anno.|
 |tcga.data.u|bulk RNA-seq data of pan-cancer in TCGA.|
 
-**Note**:The parameter save.markers means that the marker genes will be stored in a temporary file, so that the next time the same reference expression is used, it will not have to be run again.
+**Note**: The parameter save.markers means that the marker genes will be stored in a temporary file, so that the next time the same reference expression is used, it will not have to be run again.
 # single cell annotation
 
     # Seurat object, which need to be annotated.
