@@ -28,17 +28,17 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
 
     library(scAnno)
     
-    data(Human_cell_landscape)
     #Import human cell type reference profile.
+    data(Human_cell_landscape)
     
-    data(gene.anno)
     #Import protein coding gene(19814 genes) to filter reference expression profile.
+    data(gene.anno)
     
-    data(tcga.data.u)
     #Import TCGA bulk data in pan-cancer.
+    data(tcga.data.u)
     
-    data(GSE136103)
     #A liver tissue data set to be annotated.
+    data(GSE136103)
     
   
 # Set parameters
@@ -54,17 +54,19 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
 
 **Note**:The parameter save.markers means that the marker genes will be stored in a temporary file, so that the next time the same reference expression is used, it will not have to be run again.
 # single cell annotation
-    obj.seu <- GSE136103
+
     # Seurat object, which need to be annotated.
+    obj.seu <- GSE136103
     
-    ref.obj <- Human_cell_landscape
     #Seurat object of reference gene expression profile.
+    ref.obj <- Human_cell_landscape
     
-    ref.expr <- GetAssayData(ref.obj, slot = 'data') %>% as.data.frame
     #Reference gene expression profile.
+    ref.expr <- GetAssayData(ref.obj, slot = 'data') %>% as.data.frame
     
-    ref.anno <- Idents(ref.obj) %>% as.character
     #Cell type information of reference profile, corresponding to the above `ref.expr`.
+    ref.anno <- Idents(ref.obj) %>% as.character
+    
 # Run scAnno to annotate cell types
 scAnno can generate two seurat object and three output matrices in a result list.More details of the results is described in the table below.
 |**output**|**details**|
