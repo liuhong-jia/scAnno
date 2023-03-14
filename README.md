@@ -72,8 +72,8 @@ scAnno can generate two seurat object and three output matrices in a result list
 |query|Seurat object, which need to be annotated.|
 |reference|Seurat object of reference gene expression profile.|
 |pred.label|Cell types corresponding to each cluster.|
-|pred.score|The prediction score for each cluster,corresponding to pred.label.|
-|pvals|Significance level of the predicted scores, corresponding to pred.score.|
+|pred.score|The prediction score for each cluster,corresponding to `pred.label`.|
+|pvals|Significance level of the predicted scores, corresponding to `pred.score`.|
 
 	scAnno(query = obj.seu,
 	ref.expr = ref.expr,
