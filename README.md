@@ -63,17 +63,23 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
     # Seurat object, which need to be annotated.
     
     ref.obj <- Human_cell_landscape
-    #Seurat object of reference gene expression profile
+    #Seurat object of reference gene expression profile.
     
     ref.expr <- GetAssayData(ref.obj, slot = 'data') %>% as.data.frame
     #Reference gene expression profile.
     
     ref.anno <- Idents(ref.obj) %>% as.character
     #Cell type information of reference profile, corresponding to the above `ref.expr`.
+# Run scAnno to annotate cell types
+scAnno can generate two seurat object and three output matrices in a result list.More details of the results is described in the table below.
+|output|details|
+|------|-------|
+|query|Seurat object, which need to be annotated.|
+|reference|Seurat object of reference gene expression profile.|
+|pred.label|Cell types corresponding to each cluster.|
+|pred.score|The prediction score for each cluster,corresponding to pred.label.|
+|pvals|Significance level of the predicted scores, corresponding to pred.score.|
 
-
-
-***
 	scAnno(query = obj.seu,
 	ref.expr = ref.expr,
 	ref.anno = ref.anno ,
@@ -153,5 +159,4 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
 
     [INFO] Show annotation results...
 ![c75c451c3a993d5f5a78adae32947c4](https://user-images.githubusercontent.com/115637576/218242912-44df6b81-7501-4840-aa1d-d97bb7121aea.png)
-
 
