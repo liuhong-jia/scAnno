@@ -137,11 +137,11 @@ scAnno can generate three output matrices in a result list.More details of the r
                C24                   C25                   C26 
           "T cell"              "T cell" "B cell (Plasmocyte)" 
                C27                   C28                   C29 
-   "Dendritic cell"    "Endothelial cell"    "Endothelial cell" 
+    "Dendritic cell"    "Endothelial cell"    "Endothelial cell" 
                 C30                   C31                   C32 
          "B cell"        "Stromal cell"    "Endothelial cell" 
                 C33                   C34 
- "Dendritic cell"     "Epithelial cell"
+     "Dendritic cell"     "Epithelial cell"
 
     results$pred.score
 	[1] 0.9999973 0.9999552 0.9997857 1.0000000 1.0000000 0.9964331 1.0000000
