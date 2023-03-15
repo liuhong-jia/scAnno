@@ -42,7 +42,8 @@ data(gene.anno)
 data(tcga.data.u)
 
 We first identified seed genes for each cell type based on differential expression.Then we calculated the genes co-expressed with the seed genes in the scRNA-seq reference profile and TCGA expression data, respectively. For a given reference cell type, we took the common genes identified in the scRNA-seq reference profile and TCGA expression data, and ultimately generated the List M for subsequent analysis.
-  
+
+#
 
 
 
