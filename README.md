@@ -83,7 +83,7 @@ scAnno can generate two seurat object and three output matrices in a result list
 |pred.score|The prediction score for each cluster,corresponding to `pred.label`.|
 |pvals|Significance level of the predicted scores, corresponding to `pred.score`.|
 
-	scAnno(query = obj.seu,
+	results = scAnno(query = obj.seu,
 	ref.expr = ref.expr,
 	ref.anno = ref.anno ,
 	save.markers = NULL,
@@ -113,18 +113,18 @@ scAnno can generate two seurat object and three output matrices in a result list
 	[INFO] Estimating p-values for annotations...
 	[INFO] Finish!
 	
-	$query
+	results$query
 	An object of class Seurat
 	21898 features across 16036 samples within 1 assay
 	Active assay: RNA (21898 features, 2830 variable features)
 	2 dimensional reductions calculated: pca, umap
 	
-	$reference
+	results$reference
 	An object of class Seurat
 	17020 features across 5561 samples within 1 assay
 	Active assay: RNA (17020 features, 0 variable features)
 
-    $pred.label
+    results$pred.label
                    C0                    C1                    C2 
              "T cell"              "T cell"              "T cell" 
                    C3                    C4                    C5 
@@ -150,14 +150,14 @@ scAnno can generate two seurat object and three output matrices in a result list
                   C33                   C34 
      "Dendritic cell"     "Epithelial cell"
 
-    $pred.score
+    results$pred.score
 	[1] 0.9999973 0.9999552 0.9997857 1.0000000 1.0000000 0.9964331 1.0000000
  	[8] 0.9986025 0.9989499 0.9998946 0.7059541 0.9920111 0.9999960 0.9984048
 	[15] 0.9824844 0.9903304 0.9989935 1.0000000 0.9903538 0.9998917 1.0000000
 	[22] 0.9998866 0.9989194 0.8723226 1.0000000 0.9999767 0.9994844 1.0000000
 	[29] 0.9983985 0.9996705 0.9532563 0.5015979 0.9670198 1.0000000 0.7521303
     
-    $pvals
+    results$pvals
      	C0      C1      C2      C3      C4      C5      C6      C7      C8 
 	2.7e-17 2.9e-17 3.6e-17 2.7e-17 2.7e-17 0.0e+00 2.7e-17 1.6e-16 1.0e-16 
      	C9     C10     C11     C12     C13     C14     C15     C16     C17 
@@ -167,6 +167,8 @@ scAnno can generate two seurat object and three output matrices in a result list
     	C27     C28     C29     C30     C31     C32     C33     C34 
 	0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00
 
+# Visualization
 Show annotation results...The left graph represents the UMAP plot of cluster of query dataset，and the right graph represents the annotation of scAnno.
+DimPlot(results$query, group.by = cluster.col, label = TRUE) | DimPlot(results$query, group.by = 'scAnno', label = TRUE)
 ![c75c451c3a993d5f5a78adae32947c4](https://user-images.githubusercontent.com/115637576/218242912-44df6b81-7501-4840-aa1d-d97bb7121aea.png)
 
