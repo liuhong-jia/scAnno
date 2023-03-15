@@ -47,7 +47,7 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
 |query     |Seurat object, which need to be annotated|
 |ref.expr  |Reference gene expression profile.       |
 |ref.anno  |Cell type information of reference profile, corresponding to the above `ref.expr`.|
-|save.markers|Specified the filename of makers need to be saved.|
+|save.markers|Specified the filename of makers need to be saved.Default: markers.|
 |cluster.col|Column name of clusters to be annotated in meta.data slot of query Seurat object. Default: seurat_clusters.|
 |factor.size|Factor size for scaling the weight of gene expression. Default: 0.1.|
 |seed.num|Number of seed genes of each cell type for recognizing candidate markers, only used when method = 'co.exp'. Default: 10.|
