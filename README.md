@@ -117,7 +117,7 @@ scAnno can generate three output matrices in a result list.More details of the r
 	17020 features across 5561 samples within 1 assay
 	Active assay: RNA (17020 features, 0 variable features)
 
-    	results$pred.label
+    results$pred.label
                C0                    C1                    C2 
          "T cell"              "T cell"              "T cell" 
                C3                    C4                    C5 
@@ -128,12 +128,12 @@ scAnno can generate three output matrices in a result list.More details of the r
        "Monocyte"     "Epithelial cell"          "Macrophage" 
               C12                   C13                   C14 
          "T cell"    "Endothelial cell"            "Monocyte" 
-                 C15                   C16                   C17 
-	"Endothelial cell"    "Endothelial cell"              "T cell" 
+              C15                   C16                   C17 
+"Endothelial cell"    "Endothelial cell"              "T cell" 
               C18                   C19                   C20 
      	"Macrophage"  "Smooth muscle cell"              "T cell" 
               C21                   C22                   C23 
-	  "Smooth muscle cell"              "B cell"            "Monocyte" 
+"Smooth muscle cell"              "B cell"            "Monocyte" 
                C24                   C25                   C26 
           "T cell"              "T cell" "B cell (Plasmocyte)" 
                C27                   C28                   C29 
