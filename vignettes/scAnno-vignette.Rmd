@@ -1,5 +1,7 @@
 ---
-title: "scAnno-vignette"
+title: "`scAnno` package vignette"
+author:"Liu hongjia"
+date:"`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{scAnno-vignette}
@@ -17,3 +19,71 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(scAnno)
 ```
+
+# Introduction
+Undoubtedly, single-cell RNA sequencing (scRNA-seq) has changed the research landscape by providing insights into heterogeneous, complex and rare cell populations. Given that more such datasets will become available in the near future, their accurate assessment with compatible and robust models for cell type annotation is a prerequisite.scAnno is an automated annotation tool for single-cell RNA sequencing datasets primarily based on the single cell cluster levels, using a joint deconvolution strategy and logistic regression.
+
+# Application of `scAnno`
+First, we should load the `scAnno` package.
+
+```{r load_libraries,  message=FALSE, results='hide', warning=FALSE}
+
+library(scAnno)
+```
+We explicitly created a complete reference atlas (reference expression profiles) of 30 cell types from the Human Cell Landscape (HCL) covering more than 50 human tissues to support scAnno.scAnno offers a possibility to obtain genes with high expression and specificity in a given cell type as cell type-specific genes (marker genes) by combining co-expression genes with seed genes as a core.
+
+#Import human cell type reference profile.
+data(Human_cell_landscape)
+
+#Import protein coding gene(19814 genes) to filter reference expression profile.
+data(gene.anno)
+
+#Import TCGA bulk data in pan-cancer.
+data(tcga.data.u)
+
+We first identified seed genes for each cell type based on differential expression.
+#Seurat object of reference gene expression profile.
+ref.obj <- Human_cell_landscape
+#Identify seed genes,default:10.
+seed.genes <- identSeedGenes(avg.expr.ref, factor.size= 0.1, count = 10)
+#Calculation of seed genes and co-expressed genes in scRNA-seq reference profile.
+ref.markers_single <- searchMarkersByCorr(
+					GetAssayData(ref.obj) %>% as.matrix, 
+					seed.genes, 
+					scale.data = TRUE,
+					p.cut = 0.01,
+					seed.num = 10,
+					tcga.data.u = NULL
+				)
+#Calculation of seed genes and co-expressed genes in TCGA bulk expression data.
+ref.markers_bulk <- searchMarkersByCorr(
+					GetAssayData(ref.obj) %>% as.matrix, 
+					seed.genes, 
+					scale.data = TRUE,
+					p.cut = 0.01,
+					seed.num = 10,
+					tcga.data.u = tcga.data.u
+				)
+#common genes(cell type specific genes)
+ref.markers <- lapply(1:length(ref.markers_single),function(idx){
+					genes <- intersect(unlist(ref.markers_single[idx]),unlist(ref.markers_bulk[idx]))
+					if(length(genes) < 20){genes <- unlist(ref.markers_single[idx])}else{return (genes)}
+				}) %>% `names<-`(names(ref.markers_single))
+        
+# Deconvolution for predicting.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
