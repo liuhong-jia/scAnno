@@ -1,6 +1,6 @@
 ---
 title: "`scAnno` package vignette"
-author:"Liu hongjia"
+author:"Liu hongjia" 
 date:"`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
