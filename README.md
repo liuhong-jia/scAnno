@@ -50,7 +50,6 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
 |save.markers|Specified the filename of makers need to be saved.|
 |cluster.col|Column name of clusters to be annotated in meta.data slot of query Seurat object. Default: seurat_clusters.|
 |factor.size|Factor size for scaling the weight of gene expression. Default: 0.1.|
-|method|Specified method for selecting candidate marker genes, co.exp [co-expression with seed genes] or diff.exp [differential expressed genes by Seurat method]. Default: co.exp.|
 |seed.num|Number of seed genes of each cell type for recognizing candidate markers, only used when method = 'co.exp'. Default: 10.|
 |redo.markers|Re-search candidate markers or not. Default: FALSE.|
 |gene.anno|Gene annotation data.frame. Default: gene.anno.|
@@ -89,7 +88,14 @@ scAnno can generate two seurat object and three output matrices in a result list
 	ref.anno = ref.anno ,
 	save.markers = "ref.markers",
 	cluster.col = "seurat_clusters",
+	factor.size = 0.1,
+	pvalue.cut = 0.01,
+	seed.num = 10,
+	redo.markers = FALSE,
 	gene.anno = gene.anno,
+	permut.num = 100,
+	show.plot = TRUE,
+	verbose = TRUE
 	tcga.data.u = tcga.data.u
 	)
 	
