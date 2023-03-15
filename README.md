@@ -17,7 +17,7 @@ To install scAnno,we recommed using devtools:
 ***
 
 # Dependencies
-- R version >= 2.10.0.
+- R version >= 3.5.0.
 - R packages: Seurat, dplyr, reticulate, MASS, irlba, future, progress, parallel, glmnet, knitr, rmarkdown, devtools
 
 # Guided Tutorials
