@@ -41,9 +41,41 @@ data(gene.anno)
 #Import TCGA bulk data in pan-cancer.
 data(tcga.data.u)
 
-We first identified seed genes for each cell type based on differential expression.Then we calculated the genes co-expressed with the seed genes in the scRNA-seq reference profile and TCGA expression data, respectively. For a given reference cell type, we took the common genes identified in the scRNA-seq reference profile and TCGA expression data, and ultimately generated the List M for subsequent analysis.
+scAnno requires a object data which is processed by Seurat standard process, here we use GSE136103 dataset as an example to show the annotation. 
+#A liver tissue data set to be annotated.
+data(GSE136103)
 
-#
+#Seurat object, which need to be annotated.
+obj.seu <- GSE136103
+
+#Seurat object of reference gene expression profile.
+ref.obj <- Human_cell_landscape
+
+#Reference gene expression profile.
+ref.expr <- GetAssayData(ref.obj, slot = 'data') %>% as.data.frame
+
+#Cell type information of reference profile, corresponding to the above `ref.expr`.
+ref.anno <- Idents(ref.obj) %>% as.character
+
+After preparing the data, we start running scAnno.
+
+    scAnno(query = obj.seu,
+    ref.expr = ref.expr,
+    ref.anno = ref.anno ,
+    save.markers = "ref.markers",
+    cluster.col = "seurat_clusters",
+    factor.size = 0.1,
+    pvalue.cut = 0.01,
+    seed.num = 10,
+    redo.markers = FALSE,
+    gene.anno = gene.anno,
+    permut.num = 100,
+    show.plot = TRUE,
+    verbose = TRUE,
+    tcga.data.u = tcga.data.u
+    )
+
+
 
 
 
