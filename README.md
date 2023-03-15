@@ -95,7 +95,7 @@ scAnno can generate two seurat object and three output matrices in a result list
 	gene.anno = gene.anno,
 	permut.num = 100,
 	show.plot = TRUE,
-	verbose = TRUE
+	verbose = TRUE,
 	tcga.data.u = tcga.data.u
 	)
 	
