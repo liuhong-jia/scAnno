@@ -41,41 +41,8 @@ data(gene.anno)
 #Import TCGA bulk data in pan-cancer.
 data(tcga.data.u)
 
-We first identified seed genes for each cell type based on differential expression.
-#Seurat object of reference gene expression profile.
-ref.obj <- Human_cell_landscape
-#Identify seed genes,default:10.
-seed.genes <- identSeedGenes(avg.expr.ref, factor.size= 0.1, count = 10)
-#Calculation of seed genes and co-expressed genes in scRNA-seq reference profile.
-ref.markers_single <- searchMarkersByCorr(
-					GetAssayData(ref.obj) %>% as.matrix, 
-					seed.genes, 
-					scale.data = TRUE,
-					p.cut = 0.01,
-					seed.num = 10,
-					tcga.data.u = NULL
-				)
-#Calculation of seed genes and co-expressed genes in TCGA bulk expression data.
-ref.markers_bulk <- searchMarkersByCorr(
-					GetAssayData(ref.obj) %>% as.matrix, 
-					seed.genes, 
-					scale.data = TRUE,
-					p.cut = 0.01,
-					seed.num = 10,
-					tcga.data.u = tcga.data.u
-				)
-#common genes(cell type specific genes)
-ref.markers <- lapply(1:length(ref.markers_single),function(idx){
-					genes <- intersect(unlist(ref.markers_single[idx]),unlist(ref.markers_bulk[idx]))
-					if(length(genes) < 20){genes <- unlist(ref.markers_single[idx])}else{return (genes)}
-				}) %>% `names<-`(names(ref.markers_single))
-        
-# Deconvolution for predicting.
-
-
-
-
-
+We first identified seed genes for each cell type based on differential expression.Then we calculated the genes co-expressed with the seed genes in the scRNA-seq reference profile and TCGA expression data, respectively. For a given reference cell type, we took the common genes identified in the scRNA-seq reference profile and TCGA expression data, and ultimately generated the List M for subsequent analysis.
+  
 
 
 
