@@ -129,13 +129,13 @@ scAnno can generate three output matrices in a result list.More details of the r
               C12                   C13                   C14 
          "T cell"    "Endothelial cell"            "Monocyte" 
               C15                   C16                   C17 
-"Endothelial cell"    "Endothelial cell"              "T cell" 
+    "Endothelial cell"    "Endothelial cell"              "T cell" 
               C18                   C19                   C20 
-     	"Macrophage"  "Smooth muscle cell"              "T cell" 
+     	    "Macrophage"  "Smooth muscle cell"              "T cell" 
               C21                   C22                   C23 
-"Smooth muscle cell"              "B cell"            "Monocyte" 
+    "Smooth muscle cell"              "B cell"            "Monocyte" 
                C24                   C25                   C26 
-          "T cell"              "T cell" "B cell (Plasmocyte)" 
+          "T cell"              "T cell"        "B cell (Plasmocyte)" 
                C27                   C28                   C29 
     "Dendritic cell"    "Endothelial cell"    "Endothelial cell" 
                 C30                   C31                   C32 
