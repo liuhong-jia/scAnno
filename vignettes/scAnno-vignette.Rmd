@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r}
 library(scAnno)
 ```
 
@@ -32,7 +32,7 @@ scAnno is a reference-based tool for automatic annotation of cell types.We expli
 Built-in data includes list of protein-coding genes(gene.anno),TCGA bulk expression data after dimensionality reduction(tcga.data.u),and a liver tissue dataset for test(GSE136103)
 
 # Application
-```{r setup}
+```{r}
 #Installing scAnno using github
 devtools::install_github("liuhong-jia/scAnno")  
 library(scAnno)
@@ -51,7 +51,7 @@ data(GSE136103)
 ```
 
 # Preparing data for input
-```{r setup}
+```{r}
 # Seurat object, which need to be annotated.
 obj.seu <- GSE136103
 
@@ -65,7 +65,7 @@ ref.expr <- GetAssayData(ref.obj, slot = 'data') %>% as.data.frame
 ref.anno <- Idents(ref.obj) %>% as.character
 ```
 # Run 
-```{r setup}
+```{r}
 results = scAnno(query = obj.seu,
 	  ref.expr = ref.expr,
 	  ref.anno = ref.anno,
@@ -85,24 +85,24 @@ results = scAnno(query = obj.seu,
 # Results
 `results` contains pred.label,`pred.score` and `pvals`.`pred.label` indicates cell types corresponding to each cluster,`pred.score` indicates prediction score for each cluster,corresponding to `pred.label`,`pvals` indicates significance level of the predicted scores, corresponding to `pred.score`.
 
-```{r setup}
+```{r}
 results$query
 ```
  
-```{r setup}
+```{r}
 results$reference
 ```
 
-```{r setup}
+```{r}
 results$pred.score
 ```
 
-```{r setup}
+```{r}
 results$pvals
 ```
 # Visualization
 
-```{r setup}
+```{r}
 DimPlot(results$query, group.by = "seurat_clusters", label = TRUE) | DimPlot(results$query, group.by = 'scAnno', label = TRUE)
 ```
  
