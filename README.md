@@ -73,8 +73,8 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
     #Cell type information of reference profile, corresponding to the above `ref.expr`.
     ref.anno <- Idents(ref.obj) %>% as.character
     
-# Run scAnno to annotate cell types
-scAnno can generate three output matrices in a result list.More details of the results is described in the table below.
+# Run scAnno to annotate cell 
+Details of the results is described in the table below.
 |**output**|**details**|
 |------|-------|
 |query|Seurat object, which need to be annotated.|
