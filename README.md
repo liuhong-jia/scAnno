@@ -84,20 +84,20 @@ scAnno can generate three output matrices in a result list.More details of the r
 |pvals|Significance level of the predicted scores, corresponding to `pred.score`.|
 
 	results = scAnno(query = obj.seu,
-	ref.expr = ref.expr,
-	ref.anno = ref.anno,
-	save.markers = "markers",
-	cluster.col = "seurat_clusters",
-	factor.size = 0.1,
-	pvalue.cut = 0.01,
-	seed.num = 10,
-	redo.markers = FALSE,
-	gene.anno = gene.anno,
-	permut.num = 100,
-	show.plot = TRUE,
-	verbose = TRUE,
-	tcga.data.u = tcga.data.u
-	)
+		ref.expr = ref.expr,
+		ref.anno = ref.anno,
+		save.markers = "markers",
+		cluster.col = "seurat_clusters",
+		factor.size = 0.1,
+		pvalue.cut = 0.01,
+		seed.num = 10,
+		redo.markers = FALSE,
+		gene.anno = gene.anno,
+		permut.num = 100,
+		show.plot = TRUE,
+		verbose = TRUE,
+		tcga.data.u = tcga.data.u
+		)
 	[INFO] Checking the legality of parameters
 	[INFO] 30 cell types in reference, 35 clusters in query objects
 	[INFO] Deconvolution by using RLM method
