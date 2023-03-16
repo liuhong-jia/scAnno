@@ -1,6 +1,8 @@
 
 ---
-title: "scAnno-vignette"
+title: "`scAnno` package vignette"
+author:"Hongjia Liu","Huamei Li"
+date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{scAnno-vignette}
@@ -19,12 +21,90 @@ knitr::opts_chunk$set(
 library(scAnno)
 ```
 
+# Introduction
+Undoubtedly, single-cell RNA sequencing (scRNA-seq) has changed the research landscape by providing insights into heterogeneous, complex and rare cell populations. Given that more such datasets will become available in the near future, their accurate assessment with compatible and robust models for cell type annotation is a prerequisite. Considering this, herein, we developed `scAnno` (scRNA-seq data annotation), an automated annotation tool for single-cell RNA sequencing datasets primarily based on the single cell cluster levels, using a joint deconvolution strategy and logistic regression. 
 
 
+# Dependencies
+scAnno requires a dependency on R versions larger than 3.5.0, in which python is used interactively, and requires the installation of the sklearn module.The dependent packages are Seurat, dplyr, reticulate, MASS, irlba, future, progress, parallel, glmnet, knitr, rmarkdown, devtools.
 
+scAnno is a reference-based tool for automatic annotation of cell types.We explicitly created a complete reference atlas (reference expression profiles) of 30 cell types from the Human Cell Landscape (HCL) covering more than 50 human tissues to support `scAnno`.The reference profile is built into the R package as a Seurat object.
+Built-in data includes list of protein-coding genes(gene.anno),TCGA bulk expression data after dimensionality reduction(tcga.data.u),and a liver tissue dataset for test(GSE136103)
 
+# Application
+```{r setup}
+#Installing scAnno using github
+devtools::install_github("liuhong-jia/scAnno")  
+library(scAnno)
 
+#Import human cell type reference profile.
+data(Human_cell_landscape)
 
+#Import protein coding gene(19814 genes) to filter reference expression profile.
+data(gene.anno)
 
+#Import TCGA bulk data in pan-cancer.
+data(tcga.data.u)
+
+#A liver tissue data set to be annotated.
+data(GSE136103)
+```
+
+# Preparing data for input
+```{r setup}
+# Seurat object, which need to be annotated.
+obj.seu <- GSE136103
+
+#Seurat object of reference gene expression profile.
+ref.obj <- Human_cell_landscape
+
+#Reference gene expression profile.
+ref.expr <- GetAssayData(ref.obj, slot = 'data') %>% as.data.frame
+
+#Cell type information of reference profile, corresponding to the above `ref.expr`.
+ref.anno <- Idents(ref.obj) %>% as.character
+```
+# Run 
+```{r setup}
+results = scAnno(query = obj.seu,
+	  ref.expr = ref.expr,
+	  ref.anno = ref.anno,
+	  save.markers = "markers",
+	  cluster.col = "seurat_clusters",
+	  factor.size = 0.1,
+	  pvalue.cut = 0.01,
+	  seed.num = 10,
+	  redo.markers = FALSE,
+	  gene.anno = gene.anno,
+	  permut.num = 100,
+	  show.plot = TRUE,
+	  verbose = TRUE,
+	  tcga.data.u = tcga.data.u
+	  )
+ ```
+# Results
+`results` contains pred.label,`pred.score` and `pvals`.`pred.label` indicates cell types corresponding to each cluster,`pred.score` indicates prediction score for each cluster,corresponding to `pred.label`,`pvals` indicates significance level of the predicted scores, corresponding to `pred.score`.
+
+```{r setup}
+results$query
+```
+ 
+```{r setup}
+results$reference
+```
+
+```{r setup}
+results$pred.score
+```
+
+```{r setup}
+results$pvals
+```
+# Visualization
+
+```{r setup}
+DimPlot(results$query, group.by = "seurat_clusters", label = TRUE) | DimPlot(results$query, group.by = 'scAnno', label = TRUE)
+```
+ 
 
 
