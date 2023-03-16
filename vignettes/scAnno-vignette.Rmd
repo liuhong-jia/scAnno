@@ -1,7 +1,6 @@
+
 ---
-title: "`scAnno` package vignette"
-author:"Liu hongjia" 
-date:"`r Sys.Date()`"
+title: "scAnno-vignette"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{scAnno-vignette}
@@ -19,113 +18,6 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(scAnno)
 ```
-
-# Introduction
-Undoubtedly, single-cell RNA sequencing (scRNA-seq) has changed the research landscape by providing insights into heterogeneous, complex and rare cell populations. Given that more such datasets will become available in the near future, their accurate assessment with compatible and robust models for cell type annotation is a prerequisite.scAnno is an automated annotation tool for single-cell RNA sequencing datasets primarily based on the single cell cluster levels, using a joint deconvolution strategy and logistic regression.
-
-# Application of `scAnno`
-First, we should load the `scAnno` package.
-
-```{r load_libraries,  message=FALSE, results='hide', warning=FALSE}
-
-library(scAnno)
-```
-We explicitly created a complete reference atlas (reference expression profiles) of 30 cell types from the Human Cell Landscape (HCL) covering more than 50 human tissues to support scAnno.scAnno offers a possibility to obtain genes with high expression and specificity in a given cell type as cell type-specific genes (marker genes) by combining co-expression genes with seed genes as a core.
-
-    #Import human cell type reference profile.
-    data(Human_cell_landscape)
-
-    #Import protein coding gene(19814 genes) to filter reference expression profile.
-    data(gene.anno)
-
-    #Import TCGA bulk data in pan-cancer.
-    data(tcga.data.u)
-
-scAnno requires a object data which is processed by Seurat standard process, here we use GSE136103 dataset as an example to show the annotation. 
-    #A liver tissue data set to be annotated.
-    data(GSE136103)
-
-    #Seurat object, which need to be annotated.
-    obj.seu <- GSE136103
-
-    #Seurat object of reference gene expression profile.
-    ref.obj <- Human_cell_landscape
-
-    #Reference gene expression profile.
-    ref.expr <- GetAssayData(ref.obj, slot = 'data') %>% as.data.frame
-
-    #Cell type information of reference profile, corresponding to the above `ref.expr`.
-    ref.anno <- Idents(ref.obj) %>% as.character
-    
-After preparing the input data, start running scAnno.We apply the default parameters to run.
-
-    results = scAnno(query = obj.seu,
-    ref.expr = ref.expr,
-    ref.anno = ref.anno ,
-    save.markers = NULL,
-    cluster.col = "seurat_clusters",
-    factor.size = 0.1,
-    pvalue.cut = 0.01,
-    seed.num = 10,
-    redo.markers = FALSE,
-    gene.anno = gene.anno,
-    permut.num = 100,
-    show.plot = TRUE,
-    verbose = TRUE,
-    tcga.data.u = tcga.data.u
-    )
-   
-scAnno can generate three output matrices in a result list.pred.label refer to cell types corresponding to each cluster.pred.score	refer to the prediction score for each cluster,corresponding to pred.label.pvals refer to Significance level of the predicted scores, corresponding to pred.score.
-  results$pred.label
-          C0                    C1                    C2 
-         "T cell"              "T cell"              "T cell" 
-               C3                    C4                    C5 
-         "T cell"              "T cell"      "Dendritic cell" 
-               C6                    C7                    C8 
-         "T cell"              "T cell"              "T cell" 
-               C9                   C10                   C11 
-       "Monocyte"     "Epithelial cell"          "Macrophage" 
-              C12                   C13                   C14 
-         "T cell"    "Endothelial cell"            "Monocyte" 
-              C15                   C16                   C17 
-"Endothelial cell"    "Endothelial cell"              "T cell" 
-              C18                   C19                   C20 
-     "Macrophage"  "Smooth muscle cell"              "T cell" 
-              C21                   C22                   C23 
-"Smooth muscle cell"              "B cell"            "Monocyte" 
-              C24                   C25                   C26 
-         "T cell"              "T cell" "B cell (Plasmocyte)" 
-              C27                   C28                   C29 
- "Dendritic cell"    "Endothelial cell"    "Endothelial cell" 
-              C30                   C31                   C32 
-         "B cell"        "Stromal cell"    "Endothelial cell" 
-              C33                   C34 
- "Dendritic cell"     "Epithelial cell"
- 
-  results$pred.score
-  [1] 0.9999973 0.9999552 0.9997857 1.0000000 1.0000000 0.9964331 1.0000000
-  [8] 0.9986025 0.9989499 0.9998946 0.7059541 0.9920111 0.9999960 0.9984048
-  [15] 0.9824844 0.9903304 0.9989935 1.0000000 0.9903538 0.9998917 1.0000000
-  [22] 0.9998866 0.9989194 0.8723226 1.0000000 0.9999767 0.9994844 1.0000000
-  [29] 0.9983985 0.9996705 0.9532563 0.5015979 0.9670198 1.0000000 0.7521303
- 
- results$pvals
-  C0      C1      C2      C3      C4      C5      C6      C7      C8 
-  2.7e-17 2.9e-17 3.6e-17 2.7e-17 2.7e-17 0.0e+00 2.7e-17 1.6e-16 1.0e-16 
- 	  C9     C10     C11     C12     C13     C14     C15     C16     C17 
-  0.0e+00 0.0e+00 0.0e+00 2.7e-17 0.0e+00 0.0e+00 0.0e+00 0.0e+00 2.7e-17 
-	  C18     C19     C20     C21     C22     C23     C24     C25     C26 
-  0.0e+00 0.0e+00 2.7e-17 0.0e+00 0.0e+00 0.0e+00 2.7e-17 2.8e-17 0.0e+00 
-	  C27     C28     C29     C30     C31     C32     C33     C34 
-  0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00
-  
-  
-Show annotation results...
-   ![c75c451c3a993d5f5a78adae32947c4](https://user-images.githubusercontent.com/115637576/218242912-44df6b81-7501-4840-aa1d-d97bb7121aea.png)
-   
-
-
-
 
 
 
