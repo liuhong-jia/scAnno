@@ -1,7 +1,7 @@
 
 ---
 title: "`scAnno` package vignette"
-author:"Hongjia Liu","Huamei Li"
+author:"Hongjia Liu"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
@@ -64,7 +64,7 @@ ref.expr <- GetAssayData(ref.obj, slot = 'data') %>% as.data.frame
 #Cell type information of reference profile, corresponding to the above `ref.expr`.
 ref.anno <- Idents(ref.obj) %>% as.character
 ```
-# Run 
+# scRNA-seq data annotation 
 ```{r}
 results = scAnno(query = obj.seu,
 	  ref.expr = ref.expr,
