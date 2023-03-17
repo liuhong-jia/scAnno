@@ -27,7 +27,7 @@ scAnno <- function(
 	query        = obj.seu, 
 	ref.expr     = ref.expr, 
 	ref.anno     = ref.anno,
-	save.markers = markers,
+	save.markers = "markers",
 	cluster.col  = 'seurat_clusters',
 	factor.size  = 0.1,
 	pvalue.cut   = 0.01,
