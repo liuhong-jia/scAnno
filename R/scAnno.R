@@ -5,7 +5,7 @@ options(warn = -1)
 #' @param obj.seu Seurat object, which need to be annotated.
 #' @param ref.expr Reference gene expression profile. 
 #' @param ref.anno Cell type information of reference profile, corresponding to the above `ref.expr`.
-#' @param save.markers Specified the filename of makers need to be saved. 
+#' @param save.markers Specified the filename of makers need to be saved. Default: markers.
 #' @param cluster.col Column name of clusters to be annotated in meta.data slot of query Seurat object. Default: seurat_clusters.
 #' @param factor.size Factor size for scaling the weight of gene expression. Default: 0.1.
 #' @param method Specified method for selecting candidate marker genes, co.exp [co-expression with seed genes] or diff.exp [differential expressed genes by Seurat method]. Default: co.exp.
@@ -27,7 +27,7 @@ scAnno <- function(
 	query        = obj.seu, 
 	ref.expr     = ref.expr, 
 	ref.anno     = ref.anno,
-	save.markers = NULL,
+	save.markers = markers,
 	cluster.col  = 'seurat_clusters',
 	factor.size  = 0.1,
 	pvalue.cut   = 0.01,
