@@ -129,19 +129,20 @@ Details of the results is described in the table below.
                   C12                   C13                   C14
              "T cell"    "Endothelial cell"            "Monocyte"
                   C15                   C16                   C17
-   "Endothelial cell"    "Endothelial cell"              "T cell"
+   	"Endothelial cell"    "Endothelial cell"              "T cell"
                   C18                   C19                   C20
          "Macrophage"  "Smooth muscle cell"              "T cell"
                   C21                   C22                   C23
- "Smooth muscle cell"              "B cell"            "Monocyte"
+ 	"Smooth muscle cell"              "B cell"            "Monocyte"
                   C24                   C25                   C26
              "T cell"              "T cell" "B cell (Plasmocyte)"
                   C27                   C28                   C29
-     "Dendritic cell"    "Endothelial cell"    "Endothelial cell"
+     	"Dendritic cell"    "Endothelial cell"    "Endothelial cell"
                   C30                   C31                   C32
              "B cell"        "Stromal cell"    "Endothelial cell"
                   C33                   C34
-     "Dendritic cell"     "Epithelial cell"
+     	"Dendritic cell"     "Epithelial cell"
+	
     results$pred.score
 	[1] 0.9999944 0.9987957 0.9972636 1.0000000 1.0000000 0.9979784 0.9999558
         [8] 0.9977544 0.9981475 0.9995275 0.8849131 0.9949165 0.9999916 0.9986469
