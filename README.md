@@ -118,47 +118,51 @@ Details of the results is described in the table below.
 	Active assay: RNA (17020 features, 0 variable features)
 
     results$pred.label
-               C0                    C1                    C2 
-         "T cell"              "T cell"              "T cell" 
-               C3                    C4                    C5 
-         "T cell"              "T cell"      "Dendritic cell" 
-               C6                    C7                    C8 
-         "T cell"              "T cell"              "T cell" 
-               C9                   C10                   C11 
-       "Monocyte"     "Epithelial cell"          "Macrophage" 
-              C12                   C13                   C14 
-         "T cell"    "Endothelial cell"            "Monocyte" 
-              C15                   C16                   C17 
-    "Endothelial cell"    "Endothelial cell"         "T cell" 
-              C18                   C19                   C20 
-     	    "Macrophage"  "Smooth muscle cell"       "T cell" 
-              C21                   C22                   C23 
-    "Smooth muscle cell"           "B cell"          "Monocyte" 
-              C24                   C25                   C26 
-          "T cell"              "T cell"   "B cell (Plasmocyte)" 
-              C27                   C28                   C29 
-    "Dendritic cell"    "Endothelial cell"    "Endothelial cell" 
-              C30                   C31                   C32 
-         "B cell"        "Stromal cell"       "Endothelial cell" 
-              C33                   C34 
-     "Dendritic cell"  "Epithelial cell"
-
+              C0                    C1                    C2
+             "T cell"              "T cell"              "T cell"
+                   C3                    C4                    C5
+             "T cell"              "T cell"      "Dendritic cell"
+                   C6                    C7                    C8
+             "T cell"              "T cell"              "T cell"
+                   C9                   C10                   C11
+           "Monocyte"     "Epithelial cell"          "Macrophage"
+                  C12                   C13                   C14
+             "T cell"    "Endothelial cell"            "Monocyte"
+                  C15                   C16                   C17
+   "Endothelial cell"    "Endothelial cell"              "T cell"
+                  C18                   C19                   C20
+         "Macrophage"  "Smooth muscle cell"              "T cell"
+                  C21                   C22                   C23
+ "Smooth muscle cell"              "B cell"            "Monocyte"
+                  C24                   C25                   C26
+             "T cell"              "T cell" "B cell (Plasmocyte)"
+                  C27                   C28                   C29
+     "Dendritic cell"    "Endothelial cell"    "Endothelial cell"
+                  C30                   C31                   C32
+             "B cell"        "Stromal cell"    "Endothelial cell"
+                  C33                   C34
+     "Dendritic cell"     "Epithelial cell"
     results$pred.score
-	[1] 0.9999973 0.9999552 0.9997857 1.0000000 1.0000000 0.9964331 1.0000000
- 	[8] 0.9986025 0.9989499 0.9998946 0.7059541 0.9920111 0.9999960 0.9984048
-	[15] 0.9824844 0.9903304 0.9989935 1.0000000 0.9903538 0.9998917 1.0000000
-	[22] 0.9998866 0.9989194 0.8723226 1.0000000 0.9999767 0.9994844 1.0000000
-	[29] 0.9983985 0.9996705 0.9532563 0.5015979 0.9670198 1.0000000 0.7521303
+	[1] 0.9999944 0.9987957 0.9972636 1.0000000 1.0000000 0.9979784 0.9999558
+        [8] 0.9977544 0.9981475 0.9995275 0.8849131 0.9949165 0.9999916 0.9986469
+	[15] 0.9586247 0.9774114 0.9978670 1.0000000 0.9902297 0.9995580 1.0000000
+	[22] 0.9999576 0.9979638 0.6009568 1.0000000 0.9984880 0.9985971 1.0000000
+	[29] 0.9984917 0.9989927 0.9806239 0.6151706 0.9796672 1.0000000 1.0000000
+
     
     results$pvals
-     	C0      C1      C2      C3      C4      C5      C6      C7      C8 
-	2.7e-17 2.9e-17 3.6e-17 2.7e-17 2.7e-17 0.0e+00 2.7e-17 1.6e-16 1.0e-16 
-     	C9     C10     C11     C12     C13     C14     C15     C16     C17 
-	0.0e+00 0.0e+00 0.0e+00 2.7e-17 0.0e+00 0.0e+00 0.0e+00 0.0e+00 2.7e-17 
-    	C18     C19     C20     C21     C22     C23     C24     C25     C26 
-	0.0e+00 0.0e+00 2.7e-17 0.0e+00 0.0e+00 0.0e+00 2.7e-17 2.8e-17 0.0e+00 
-    	C27     C28     C29     C30     C31     C32     C33     C34 
-	0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00 0.0e+00
+     	C0           C1           C2           C3           C4           C5
+	4.007509e-17 2.970442e-16 3.538215e-15 3.969419e-17 3.969419e-17 0.000000e+00
+          C6           C7           C8           C9          C10          C11
+	4.278350e-17 1.616284e-15 8.570515e-16 0.000000e+00 0.000000e+00 0.000000e+00
+         C12          C13          C14          C15          C16          C17
+	4.026227e-17 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 3.969419e-17
+         C18          C19          C20          C21          C22          C23
+	0.000000e+00 0.000000e+00 3.969419e-17 0.000000e+00 0.000000e+00 0.000000e+00
+         C24          C25          C26          C27          C28          C29
+	3.969419e-17 4.921965e-16 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00
+         C30          C31          C32          C33          C34
+	0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00
 
 # Visualization
 Show annotation results...The left graph represents the UMAP plot of cluster of query dataset，and the right graph represents the annotation of scAnno.
