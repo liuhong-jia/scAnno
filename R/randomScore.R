@@ -26,7 +26,7 @@ getRandomScore <- function(obj.seu, lr.model, sig.mat, sig.features, cluster.col
 		lr.prop[names(tmp.prop)] <- tmp.prop
 		
 		#Combine the scores of the two models
-		score <- 0.436 * coef.vals[, 1] * 0.564 * lr.prop
+		score <- 0.436 * coef.vals[, 1] + 0.564 * lr.prop
 		prop <- score / sum(score)
 		prop[is.na(prop)] <- 0
 		return(prop)
