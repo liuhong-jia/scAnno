@@ -133,7 +133,7 @@ Details of the results is described in the table below.
                   C18                   C19                   C20
          "Macrophage"    "Smooth muscle cell"            "T cell"
                   C21                   C22                   C23
- 	  "Smooth muscle cell"       "B cell"            "Monocyte"
+ 	    "Smooth muscle cell"       "B cell"            "Monocyte"
                   C24                   C25                   C26
              "T cell"             "T cell"  "B cell (Plasmocyte)"
                   C27                   C28                   C29
