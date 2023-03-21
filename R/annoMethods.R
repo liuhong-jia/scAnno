@@ -69,7 +69,6 @@ mergeModelScore <- function(coef.vals, lr.pred.score, ref.obj, obj.seu, cluster.
 	com.names <- intersect(rownames(coef.vals), rownames(lr.pred.score))
 	score <- 0.436 * coef.vals[com.names, ] * 0.564 * lr.pred.score[com.names, colnames(coef.vals)]
 	rownames(score) <- names[match(rownames(score), names), 2]
-	score[score < 0] <- 0
 	prop <- sweep(score, 2, colSums(score), '/')
 	prop[is.na(prop)] <- 0
 	label <- apply(prop, 2, function(t) rownames(prop)[which.max(t)]) %>% as.vector
