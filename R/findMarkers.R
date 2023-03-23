@@ -3,7 +3,7 @@
 #' @param ref.expr Refernce gene expression profile.
 #' @param query.genes A list of query genes.
 #' @param scale.data Scale gene expression or not, default: TRUE.
-#' @param p.cut Threshold for filtering cell type-specific markers. Default: 0.1.
+#' @param p.cut Threshold for filtering cell type-specific markers. Default: 0.01.
 #' @param seed.num Number of seed genes. Default: 10.
 #' @return Seurat object 
 #' @export 
