@@ -50,7 +50,7 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
 |save.markers|Specified the filename of makers need to be saved.Default: markers.|
 |cluster.col|Column name of clusters to be annotated in meta.data slot of query Seurat object. Default: seurat_clusters.|
 |factor.size|Factor size for scaling the weight of gene expression. Default: 0.1.|
-|pvalue.cut|Threshold for filtering cell type-specific markers. Default: 0.1|
+|pvalue.cut|Threshold for filtering cell type-specific markers. Default: 0.01|
 |seed.num|Number of seed genes of each cell type for recognizing candidate markers, only used when method = 'co.exp'. Default: 10.|
 |redo.markers|Re-search candidate markers or not. Default: FALSE.|
 |gene.anno|Gene annotation data.frame. Default: gene.anno.|
