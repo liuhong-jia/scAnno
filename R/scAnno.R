@@ -9,6 +9,7 @@ options(warn = -1)
 #' @param cluster.col Column name of clusters to be annotated in meta.data slot of query Seurat object. Default: seurat_clusters.
 #' @param factor.size Factor size for scaling the weight of gene expression. Default: 0.1.
 #' @param method Specified method for selecting candidate marker genes, co.exp [co-expression with seed genes] or diff.exp [differential expressed genes by Seurat method]. Default: co.exp.
+#' @param pvalue.cut Threshold for filtering cell type-specific markers. Default: 0.01.
 #' @param seed.num Number of seed genes of each cell type for recognizing candidate markers, only used when method = 'co.exp'. Default: 10.
 #' @param subset.size Marker size of each cell type from reference profile. Default: NULL.  
 #' @param redo.markers Re-search candidate markers or not. Default: FALSE.
