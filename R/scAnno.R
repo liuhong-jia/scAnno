@@ -136,9 +136,6 @@ scAnno <- function(
 		metadata = obj.seu@meta.data[, cluster.col] %>% as.vector, 
 		col.name = 'scAnno'
 	)
-	for(i in 0 : length(levels(obj.seu@meta.data[, cluster.col])) - 1) {
-		obj.seu$scAnno[obj.seu@meta.data[, cluster.col] == i] <- anno.label[i + 1]
-	}
 	
 	println('[INFO] Estimating p-values for annotations...', verbose = verbose)
 	rand.scores <- getRandomScore(
@@ -153,6 +150,9 @@ scAnno <- function(
 	
 	for (i in 1:length(names(pvals))){
 	   ifelse(pvals[i] < 0.01 ,anno.res$label[i] <- anno.label[i],anno.res$label[i] <- "UNKNOWN")
+	}
+	for(i in 0 : length(levels(obj.seu@meta.data[, cluster.col])) - 1) {
+		obj.seu$scAnno[obj.seu@meta.data[, cluster.col] == i] <- anno.res$label[i + 1]
 	}
 	
 	if (show.plot) {
