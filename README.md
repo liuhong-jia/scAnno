@@ -55,7 +55,7 @@ The human single cell reference profile (hcl.sc.rda) and the mouse single cell r
 |redo.markers|Re-search candidate markers or not. Default: FALSE.|
 |gene.anno|Gene annotation data.frame. Default: gene.anno.|
 |permut.num|Number of permutations for estimating p-values of annotations. Default: 100.|
-|permut.p|Threshold for significance of integration score.Default: 0.01.This threshold can be adjusted by the user as required.|
+|permut.p|Threshold for significance of integration score. Default: 0.01. This threshold can be adjusted by the user as required.|
 |show.plot|Show annotated results or not. Default: TRUE.|
 |verbose|Show running messages or not. Default: TRUE.|
 |tcga.data.u|bulk RNA-seq data of pan-cancer in TCGA.|
