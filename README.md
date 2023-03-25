@@ -55,6 +55,7 @@ For this tutorial, we apply the human single cell reference atlas(hcl.sc.rda) bu
 |redo.markers|Re-search candidate markers or not. Default: FALSE.|
 |gene.anno|Gene annotation data.frame. Default: gene.anno.|
 |permut.num|Number of permutations for estimating p-values of annotations. Default: 100.|
+|permut.p|Significance p-value estimation of the composite score. Default: 0.01.|
 |show.plot|Show annotated results or not. Default: TRUE.|
 |verbose|Show running messages or not. Default: TRUE.|
 |tcga.data.u|bulk RNA-seq data of pan-cancer in TCGA.|
@@ -95,6 +96,7 @@ Details of the results is described in the table below.
 		redo.markers = FALSE,
 		gene.anno = gene.anno,
 		permut.num = 100,
+		permut.p = 0.01,
 		show.plot = TRUE,
 		verbose = TRUE,
 		tcga.data.u = tcga.data.u
