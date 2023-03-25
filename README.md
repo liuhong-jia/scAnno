@@ -144,7 +144,7 @@ Details of the results is described in the table below.
                   C30                   C31                   C32
              "B cell"        "Stromal cell"    "Endothelial cell"
                   C33                   C34
-     "Dendritic cell"     "Epithelial cell"
+     "Dendritic cell"      "Epithelial cell"
 	
     results$pred.score
 	[1] 0.9723480 0.9520757 0.9148112 0.9822452 0.9795799 0.7371121 0.9719681
