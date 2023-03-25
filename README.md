@@ -155,7 +155,7 @@ Details of the results is described in the table below.
 
     
     results$pvals
-     	      C0           C1           C2           C3           C4           C5
+     	  C0           C1           C2           C3           C4           C5
 		3.895047e-20 6.867354e-20 2.854649e-18 3.895047e-20 3.895047e-20 0.000000e+00
           	C6           C7           C8           C9          C10          C11
 		3.895047e-20 9.296708e-18 6.126516e-20 0.000000e+00 0.000000e+00 0.000000e+00
