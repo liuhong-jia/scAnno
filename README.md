@@ -21,7 +21,7 @@ To install scAnno,we recommed using devtools:
 - R packages: Seurat, dplyr, reticulate, MASS, irlba, future, progress, parallel, glmnet, knitr, rmarkdown, devtools
 
 # Guided Tutorials
-The human single cell reference profile (hcl.sc.rda) and the mouse single cell reference profile (mca.sc.rda) are built into scAnno.Users can import appropriate reference expression profile according to species. For this tutorial, we apply the human single cell reference atlas(hcl.sc.rda) to predict a scRNA-seq dataset(GSE136103) derived from human liver tissue that has been processed by the standard Seurat process and entered as a query object.
+The human single cell reference profile (hcl.sc.rda) and the mouse single cell reference profile (mca.sc.rda) are built into scAnno.Users can import appropriate reference expression profile according to species. For this tutorial, we apply the human single cell reference profile(hcl.sc.rda) to predict a scRNA-seq dataset(GSE136103) derived from human liver tissue that has been processed by the standard Seurat process and entered as a query object.
 
 
 # Prepare input data
