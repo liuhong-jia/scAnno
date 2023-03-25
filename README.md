@@ -172,7 +172,7 @@ Details of the results is described in the table below.
 # Visualization
 Show annotation results...The left graph represents the UMAP plot of cluster of query dataset，and the right graph represents the annotation of scAnno.
 
-    DimPlot(results$query, group.by = "seurat_clusters", label = TRUE) | DimPlot(results$query, group.by = 'scAnno', label = TRUE)
+    DimPlot(results$query, group.by = "seurat_clusters", label = TRUE, label.size = 6) | DimPlot(results$query, group.by = 'scAnno', label = TRUE , label.size = 6)
     
 ![1679724660477](https://user-images.githubusercontent.com/115637576/227700141-f5d7339f-f50f-4e31-8605-0bdb759629c1.png)
 
