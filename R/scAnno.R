@@ -161,6 +161,6 @@ scAnno <- function(
 		(DimPlot(obj.seu, group.by = cluster.col, label = TRUE) | DimPlot(obj.seu, group.by = 'scAnno', label = TRUE)) %>% print
 	}
 	println('[INFO] Finish!', verbose = verbose)
-	return(list(query = obj.seu, reference = ref.obj, pred.label = anno.res$label, pred.score = anno.score, pvals = pvals))
+	return(list(query = obj.seu, reference = ref.obj, pred.label = anno.res$label, pred.score = anno.score))
 }
 
