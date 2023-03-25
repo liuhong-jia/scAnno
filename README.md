@@ -107,11 +107,12 @@ Details of the results is described in the table below.
 	[INFO] Estimating p-values for annotations...
 	[INFO] Finish!
 	
-	results$query
+	$query
 	An object of class Seurat
-	21898 features across 16036 samples within 1 assay
+	21898 features across 3181 samples within 1 assay
 	Active assay: RNA (21898 features, 2830 variable features)
-	2 dimensional reductions calculated: pca, umap
+	 2 dimensional reductions calculated: pca, umap
+
 	
 	results$reference
 	An object of class Seurat
@@ -145,34 +146,33 @@ Details of the results is described in the table below.
      "Dendritic cell"     "Epithelial cell"
 	
     results$pred.score
-	[1] 0.9614642 0.9552271 0.9107099 0.9571242 0.9730700 0.8099739 0.9492166
- 	[8] 0.9368682 0.9080971 0.9336424 0.6240831 0.8557046 0.9601383 0.8311389
-	[15] 0.8218028 0.7731653 0.8792571 0.9676490 0.8455279 0.9449757 0.9692730
-	[22] 0.9220933 0.9120258 0.6453878 0.9683743 0.9072186 0.9325021 0.9689658
-	[29] 0.8020389 0.9170581 0.8496184 0.4183305 0.7935830 0.9479270 0.8419836
+	[1] 1.0000000 0.9990845 0.9929087 1.0000000 1.0000000 0.9935441 1.0000000
+ 	[8] 0.9908909 0.9992693 1.0000000 0.8695469 1.0000000 1.0000000 0.9961219
+	[15] 0.9811003 0.9612824 0.9976510 1.0000000 0.9895831 0.9994400 1.0000000
+	[22] 0.9998904 1.0000000 0.6339462 1.0000000 0.9998541 0.9987952 1.0000000
+	[29] 0.9986113 0.9993699 0.9852378 0.6264032 0.9825261 1.0000000 1.0000000
 
 
     
     results$pvals
-     	C0            C1            C2            C3            C4
- 	0.000000e+00 7.893570e-303 1.869963e-247 2.585056e-305  0.000000e+00
-           C5            C6            C7            C8            C9
- 	0.000000e+00 5.038966e-295 2.603847e-279 2.223778e-244  0.000000e+00
-          C10           C11           C12           C13           C14
- 	0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00
-          C15           C16           C17           C18           C19
- 	0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00
-          C20           C21           C22           C23           C24
- 	0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00
-          C25           C26           C27           C28           C29
-	2.380358e-243  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00
-          C30           C31           C32           C33           C34
- 	0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00  0.000000e+00
+     	          C0           C1           C2           C3           C4           C5
+	3.895047e-20 6.867354e-20 2.854649e-18 3.895047e-20 3.895047e-20 0.000000e+00
+          C6           C7           C8           C9          C10          C11
+	3.895047e-20 9.296708e-18 6.126516e-20 0.000000e+00 0.000000e+00 0.000000e+00
+         C12          C13          C14          C15          C16          C17
+	3.895047e-20 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 3.895047e-20
+         C18          C19          C20          C21          C22          C23
+	0.000000e+00 0.000000e+00 3.895047e-20 0.000000e+00 0.000000e+00 0.000000e+00
+         C24          C25          C26          C27          C28          C29
+	3.895047e-20 4.264586e-20 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00
+         C30          C31          C32          C33          C34
+	0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00
+
 
 # Visualization
 Show annotation results...The left graph represents the UMAP plot of cluster of query dataset，and the right graph represents the annotation of scAnno.
 
     DimPlot(results$query, group.by = "seurat_clusters", label = TRUE) | DimPlot(results$query, group.by = 'scAnno', label = TRUE)
     
-![c75c451c3a993d5f5a78adae32947c4](https://user-images.githubusercontent.com/115637576/218242912-44df6b81-7501-4840-aa1d-d97bb7121aea.png)
+![1679724150285](https://user-images.githubusercontent.com/115637576/227699772-ae7e9999-d74c-480e-b5d2-73e7caa2ff54.png)
 
