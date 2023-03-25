@@ -83,7 +83,6 @@ Details of the results is described in the table below.
 |reference|Seurat object of reference gene expression profile.|
 |pred.label|Cell types corresponding to each cluster.|
 |pred.score|The prediction score for each cluster,corresponding to `pred.label`.|
-|pvals|Significance level of the predicted scores, corresponding to `pred.score`.|
 
 	results = scAnno(query = obj.seu,
 		ref.expr = ref.expr,
@@ -155,20 +154,6 @@ Details of the results is described in the table below.
 	[29] 0.9986113 0.9993699 0.9852378 0.6264032 0.9825261 1.0000000 1.0000000
 
 
-    
-    results$pvals
-     C0           C1           C2           C3           C4           C5
-	3.895047e-20 6.867354e-20 2.854649e-18 3.895047e-20 3.895047e-20 0.000000e+00
-          C6           C7           C8           C9          C10          C11
-	3.895047e-20 9.296708e-18 6.126516e-20 0.000000e+00 0.000000e+00 0.000000e+00
-         C12          C13          C14          C15          C16          C17
-	3.895047e-20 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 3.895047e-20
-        C18          C19          C20          C21          C22          C23
-	0.000000e+00 0.000000e+00 3.895047e-20 0.000000e+00 0.000000e+00 0.000000e+00
-         C24          C25          C26          C27          C28          C29
-	3.895047e-20 4.264586e-20 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00
-         C30          C31          C32          C33          C34
-	0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00 0.000000e+00
 
 
 # Visualization
