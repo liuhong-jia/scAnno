@@ -158,7 +158,7 @@ scAnno <- function(
 	}
 	
 	if (show.plot) {
-		(DimPlot(obj.seu, group.by = cluster.col, label = TRUE) | DimPlot(obj.seu, group.by = 'scAnno', label = TRUE)) %>% print
+		(DimPlot(obj.seu, group.by = cluster.col, label = TRUE,label.size = 6) | DimPlot(obj.seu, group.by = 'scAnno', label = TRUE,label.size = 6)) %>% print
 	}
 	println('[INFO] Finish!', verbose = verbose)
 	return(list(query = obj.seu, reference = ref.obj, pred.label = anno.res$label, pred.score = anno.score))
