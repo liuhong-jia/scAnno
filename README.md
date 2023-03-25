@@ -174,5 +174,5 @@ Show annotation results...The left graph represents the UMAP plot of cluster of 
 
     DimPlot(results$query, group.by = "seurat_clusters", label = TRUE) | DimPlot(results$query, group.by = 'scAnno', label = TRUE)
     
-![1679724150285](https://user-images.githubusercontent.com/115637576/227699772-ae7e9999-d74c-480e-b5d2-73e7caa2ff54.png)
+![1679724660477](https://user-images.githubusercontent.com/115637576/227700141-f5d7339f-f50f-4e31-8605-0bdb759629c1.png)
 
