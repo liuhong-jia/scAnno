@@ -15,6 +15,7 @@ options(warn = -1)
 #' @param redo.markers Re-search candidate markers or not. Default: FALSE.
 #' @param gene.anno Gene annotation data.frame. Default: gene.anno.
 #' @param permut.num  Number of permutations for estimating p-values of annotations. Default: 100.
+#' @param permut.p Significance p-value estimation of the composite score.Default: 0.01.
 #' @param show.plot Show annotated results or not. Default: TRUE.
 #' @param verbose Show running messages or not. Default: TRUE.
 #' @param tcga.data.u bulk RNA-seq data of pan-cancer in TCGA. 
@@ -38,6 +39,7 @@ scAnno <- function(
 	redo.markers = FALSE,
 	gene.anno    = gene.anno,
 	permut.num   = 100, 
+	permut.p     = 0.01,
 	show.plot    = TRUE,
 	verbose      = TRUE,
 	tcga.data.u  = tcga.data.u
@@ -149,7 +151,7 @@ scAnno <- function(
 	pvals <- getPvalues(anno.res$score, rand.scores)
 	
 	for (i in 1:length(names(pvals))){
-	   ifelse(pvals[i] < 0.01 ,anno.res$label[i] <- anno.label[i],anno.res$label[i] <- "UNKNOWN")
+	   ifelse(pvals[i] < permut.p ,anno.res$label[i] <- anno.label[i],anno.res$label[i] <- "UNKNOWN")
 	}
 	for(i in 0 : length(levels(obj.seu@meta.data[, cluster.col])) - 1) {
 		obj.seu$scAnno[obj.seu@meta.data[, cluster.col] == i] <- anno.res$label[i + 1]
