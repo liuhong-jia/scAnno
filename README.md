@@ -29,7 +29,7 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
     library(scAnno)
     
     #Import human cell type reference profile.
-    data(Human_cell_landscape)
+    data(hcl.sc)
     
     #Import protein coding gene(19814 genes) to filter reference expression profile.
     data(gene.anno)
@@ -66,7 +66,7 @@ For this tutorial, we apply the human single cell reference atlas(Human_cell_lan
     obj.seu <- GSE136103
     
     #Seurat object of reference gene expression profile.
-    ref.obj <- Human_cell_landscape
+    ref.obj <- hcl.sc
     
     #Reference gene expression profile.
     ref.expr <- GetAssayData(ref.obj, slot = 'data') %>% as.data.frame
