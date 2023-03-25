@@ -2,7 +2,7 @@
 
 ***
 
-scAnno is an automated annotation tool for single-cell RNA sequencing datasets primarily based on the single cell cluster levels, using a joint deconvolution strategy and logistic regression. We explicitly created a complete reference atlas (reference expression profiles) of 30 cell types from the Human Cell Landscape (HCL) covering more than 50 human tissues to support this novel methodology (scAnno). scAnno offers a possibility to obtain genes with high expression and specificity in a given cell type as cell type-specific genes (marker genes) by combining co-expression genes with seed genes as a core. Of importance, scAnno can accurately identify cell type-specific genes based on cell type reference expression profiles without prior information. 
+scAnno is an automated annotation tool for single-cell RNA sequencing datasets primarily based on the single cell cluster levels, using a joint deconvolution strategy and logistic regression. We explicitly created complete human reference atlas (30 cell types from the Human Cell Landscape covering more than 50 human tissues) and mouse reference atlas (26 cell types from Mouse Cell Atlas covering more than 50 mouse tissues) to support this novel methodology (scAnno). scAnno offers a possibility to obtain genes with high expression and specificity in a given cell type as cell type-specific genes (marker genes) by combining co-expression genes with seed genes as a core. Of importance, scAnno can accurately identify cell type-specific genes based on cell type reference expression profiles without prior information. 
 ![1679582070876](https://user-images.githubusercontent.com/115637576/227236775-5c319b2f-f781-4155-b07e-ddf1230b412e.png)
 
 # Installing the package
@@ -21,14 +21,14 @@ To install scAnno,we recommed using devtools:
 - R packages: Seurat, dplyr, reticulate, MASS, irlba, future, progress, parallel, glmnet, knitr, rmarkdown, devtools
 
 # Guided Tutorials
-For this tutorial, we apply the human single cell reference atlas(Human_cell_landscape) built into the package to predict a scRNA-seq dataset(GSE136103) derived from liver tissue that has been processed by the standard Seurat process and entered as a query object.
+For this tutorial, we apply the human single cell reference atlas(hcl.sc.rda) built into the package to predict a scRNA-seq dataset(GSE136103) derived from liver tissue that has been processed by the standard Seurat process and entered as a query object.
 
 
 # Prepare input data
 
     library(scAnno)
     
-    #Import human cell type reference profile.
+    #Import human single cell reference profile.
     data(hcl.sc)
     
     #Import protein coding gene(19814 genes) to filter reference expression profile.
