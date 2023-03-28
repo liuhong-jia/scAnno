@@ -95,9 +95,6 @@ results$reference
 results$pred.score
 ```
 
-```{r}
-results$pvals
-```
 # Visualization
 
 ```{r}
