@@ -111,10 +111,10 @@ Details of the results is described in the table below.
 	[INFO] Finish!
 	
 	results$query
-##An object of class Seurat
-##21898 features across 3181 samples within 1 assay
-##Active assay: RNA (21898 features, 2830 variable features)
-##2 dimensional reductions calculated: pca, umap
+	An object of class Seurat
+	21898 features across 3181 samples within 1 assay
+	Active assay: RNA (21898 features, 2830 variable features)
+	2 dimensional reductions calculated: pca, umap
 
 	
 	results$reference
