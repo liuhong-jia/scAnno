@@ -15,7 +15,7 @@ options(warn = -1)
 #' @param redo.markers Re-search candidate markers or not. Default: FALSE.
 #' @param gene.anno Gene annotation data.frame. Default: gene.anno.
 #' @param permut.num  Number of permutations for estimating p-values of annotations. Default: 100.
-#' @param permut.p Significance p-value estimation of the composite score.Default: 0.01.
+#' @param permut.p Threshold for significance of predicted scores.Default: 0.01.
 #' @param show.plot Show annotated results or not. Default: TRUE.
 #' @param verbose Show running messages or not. Default: TRUE.
 #' @param tcga.data.u bulk RNA-seq data of pan-cancer in TCGA. 
