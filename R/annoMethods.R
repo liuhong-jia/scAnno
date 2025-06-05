@@ -45,7 +45,7 @@ lrPredModel <- function(obj.ref, obj.seu, down.sample = 100) {
 	obj.seu.sub <- obj.seu[com.genes, ]
 	
 	sklearn <- import('sklearn.linear_model')
-	lr <- sklearn$LogisticRegression(max_iter = 100000, penalty = 'l2', C = 0.2)
+	lr <- sklearn$LogisticRegression(max_iter = 100000L, penalty = 'l2', C = 0.2)
 	lr$fit(obj.ref.sub %>% GetAssayData(.) %>% as.matrix %>% t, Idents(obj.ref.sub) %>% as.vector)
 	
     pred.prob <- lr$predict_proba(obj.seu.sub %>% GetAssayData(.) %>% as.matrix %>% t)
